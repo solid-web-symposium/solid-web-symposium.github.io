@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>SoSy 27 — Solid Symposium 2027 · St.Gallen</title>
+    <script defer="" src="scripts/signup.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <style>
+    @font-face {
+      font-family: 'Ubuntu Mono';
+      src:
+        local('Ubuntu Mono'),
+        local('UbuntuMono-Regular'),
+        url('media/fonts/UbuntuMono-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --purple-1: #7b4dff;
+      --purple-2: #5e34d9;
+      --purple-mid: #9a76ff;
+      --coral: #ef8376;
+      --coral-deep: #d96354;
+      --amber: #fbb040;
+
+      --bg: #ffffff;
+      --bg-alt: #f7f7f7;
+      --ink: #3d4449;
+      --ink-soft: #646e78;
+      --rule: #dee2e7;
+      --footer-bg: #7b4dff;
+
+      --font-display: 'Roboto Slab', Georgia, serif;
+      --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 400
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 40px
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 11px;
+      color: var(--ink-soft)
+    }
+
+    .eyebrow.on-dark {
+      color: rgba(255, 255, 255, .7)
+    }
+
+    /* nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .nav-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 72px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -.005em;
+      text-decoration: none;
+      color: var(--purple-1)
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: block
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      display: block
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 14px;
+      color: var(--ink-soft)
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color .2s ease
+    }
+
+    .nav-links a:hover {
+      color: var(--ink)
+    }
+
+    .nav-cta {
+      position: fixed;
+      top: 18px;
+      right: 80px;
+      z-index: 51;
+      font-size: 13px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: var(--purple-1);
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: .01em;
+      transition: background .2s ease, transform .15s ease
+    }
+
+    .nav-cta:hover {
+      background: var(--purple-2);
+      transform: translateY(-1px)
+    }
+
+    /* hero */
+    .hero {
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+      min-height: 720px;
+      text-align: center
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.12);
+      transform-origin: center;
+      animation: heroZoom 14s ease-out forwards;
+    }
+
+    @keyframes heroZoom {
+      from {
+        transform: scale(1.12);
+      }
+
+      to {
+        transform: scale(1.0);
+      }
+    }
+
+    .hero-grade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(20, 30, 55, .55) 0%, rgba(20, 30, 55, .50) 50%, rgba(15, 20, 35, .70) 100%);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+      padding-top: 120px;
+      padding-bottom: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+
+    .hero-rule {
+      height: 1px;
+      background: rgba(255, 255, 255, .85);
+      border: 0;
+      margin: 0;
+      width: 0;
+      animation: ruleGrow 1.1s cubic-bezier(.2, .7, .2, 1) .1s forwards
+    }
+
+    .hero-rule.bottom {
+      animation-delay: .35s
+    }
+
+    @keyframes ruleGrow {
+      to {
+        width: 100%;
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(28px, 4.2vw, 52px);
+      letter-spacing: .04em;
+      line-height: 1.15;
+      margin: 0;
+      padding: 36px 0;
+      color: #fff;
+      text-wrap: balance;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: heroFade .9s ease-out .55s forwards
+    }
+
+    .hero h1 .small {
+      display: block;
+      font-weight: 400;
+      font-size: .82em;
+      letter-spacing: .05em;
+      margin-top: 14px
+    }
+
+    @keyframes heroFade {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .hero-tagline {
+      margin: 32px 0 0;
+      color: #fff;
+      font-family: var(--font-sans);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 13px;
+      opacity: 0;
+      animation: heroFade .9s ease-out 1.0s forwards
+    }
+
+    .hero-cta {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--coral);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 13px;
+      transition: background .2s ease, transform .15s ease;
+      opacity: 0;
+      animation: heroFade .9s ease-out 1.2s forwards
+    }
+
+    .hero-cta:hover {
+      background: var(--coral-deep);
+      transform: translateY(-1px)
+    }
+
+    .hero-more {
+      margin-top: 48px;
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 12px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+      animation: heroFade .9s ease-out 1.4s forwards
+    }
+
+    .hero-more .arrow {
+      font-size: 18px;
+      line-height: 1;
+      opacity: .9;
+      animation: bounce 2s ease-in-out 2s infinite
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: .9;
+      }
+
+      50% {
+        transform: translateY(6px);
+        opacity: .6;
+      }
+    }
+
+    /* about — minimal: title + facts list */
+    .about {
+      padding: 120px 0;
+      background: var(--bg-alt)
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start
+    }
+
+    .about h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--purple-1);
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -.015em;
+      margin: 14px 0 0
+    }
+
+    .facts {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--rule)
+    }
+
+    .facts li {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline
+    }
+
+    .facts .k {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--ink-soft)
+    }
+
+    .facts .v-val {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--purple-1);
+      line-height: 1.3
+    }
+
+    /* countdown */
+    .countdown {
+      padding: 100px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .countdown-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px
+    }
+
+    .countdown-head h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -.005em;
+      color: var(--purple-1)
+    }
+
+    .cd-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px
+    }
+
+    .cd-cell {
+      position: relative;
+      padding: 24px 4px 18px;
+      border-top: 2px solid var(--purple-1)
+    }
+
+    .cd-cell .num {
+      font-family: var(--font-display);
+      font-size: clamp(64px, 7vw, 104px);
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -.03em;
+      font-variant-numeric: tabular-nums;
+      display: block;
+      color: var(--purple-1)
+    }
+
+    .cd-cell .lbl {
+      display: block;
+      margin-top: 18px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--ink-soft)
+    }
+
+    .cd-cell .tick {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple-1);
+      margin-left: 8px;
+      vertical-align: middle;
+      animation: tick 1s ease-in-out infinite
+    }
+
+    @keyframes tick {
+
+      0%,
+      100% {
+        opacity: .25
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    /* signup */
+    .signup {
+      padding: 120px 0;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--purple-1)
+    }
+
+    .signup .container {
+      position: relative;
+      z-index: 2;
+      max-width: 680px
+    }
+
+    .signup h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(36px, 4.5vw, 60px);
+      line-height: 1.05;
+      letter-spacing: -.015em;
+      margin: 18px 0 0
+    }
+
+    .signup-form {
+      margin: 36px auto 0;
+      max-width: 520px;
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 999px;
+      padding: 6px;
+      backdrop-filter: blur(10px)
+    }
+
+    .signup-form input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      outline: none;
+      padding: 14px 20px;
+      font: inherit;
+      color: #fff
+    }
+
+    .signup-form input::placeholder {
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .signup-form button {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      background: #fff;
+      color: var(--purple-1);
+      font: inherit;
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: 999px;
+      letter-spacing: .01em;
+      transition: transform .15s ease, background .2s ease
+    }
+
+    .signup-form button:hover {
+      background: #fff;
+      color: var(--purple-2);
+      transform: translateY(-1px)
+    }
+
+    .signup-form .ok-msg {
+      margin: auto;
+      padding: 14px 20px;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500
+    }
+
+    .signup-form.is-done {
+      background: transparent;
+      border-color: transparent;
+      backdrop-filter: none;
+      border-radius: 0;
+      padding: 0;
+      justify-content: center
+    }
+
+    .signup-success {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin: auto;
+      padding: 8px 0;
+      width: 100%
+    }
+
+    .signup-success .logo-spin {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(0deg) scale(.4);
+      opacity: 0;
+      animation: logoSpin 2.2s cubic-bezier(.2, .7, .2, 1) forwards
+    }
+
+    .signup-success.done .logo-spin {
+      opacity: 1;
+      animation: logoSettle 2.6s ease-in-out infinite
+    }
+
+    .signup-success .logo-spin img {
+      width: 100%;
+      height: 100%;
+      display: block
+    }
+
+    .signup-success .msg {
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -.005em;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: successFade .6s ease-out 1.0s forwards
+    }
+
+    @keyframes logoSpin {
+      0% {
+        transform: rotate(0deg) scale(.4);
+        opacity: 0
+      }
+
+      40% {
+        opacity: 1
+      }
+
+      100% {
+        transform: rotate(720deg) scale(1);
+        opacity: 1
+      }
+    }
+
+    @keyframes logoSettle {
+
+      0%,
+      100% {
+        transform: rotate(0deg) scale(1)
+      }
+
+      50% {
+        transform: rotate(360deg) scale(1)
+      }
+    }
+
+    @keyframes successFade {
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .signup-success .logo-spin,
+      .signup-success.done .logo-spin {
+        animation: none;
+        transform: none;
+        opacity: 1
+      }
+
+      .signup-success .msg {
+        animation: none;
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .signup-meta {
+      margin-top: 18px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(255, 255, 255, .6);
+      letter-spacing: .16em;
+      text-transform: uppercase
+    }
+
+    .signup-purpose {
+      margin: 18px auto 0;
+      max-width: 48ch;
+      color: rgba(255, 255, 255, .85);
+      font-size: 15px;
+      line-height: 1.55
+    }
+
+    .signup-noscript {
+      margin: 18px auto 0;
+      max-width: 52ch;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.5
+    }
+
+    .signup-noscript a,
+    .signup-host-note a {
+      color: #fff;
+      text-decoration: underline
+    }
+
+    .signup-noscript code,
+    .signup-host-note code {
+      font-family: 'Ubuntu Mono', ui-monospace, monospace;
+      font-size: 12px;
+      word-break: break-all
+    }
+
+    .signup-host-note {
+      margin: 14px auto 0;
+      max-width: 52ch;
+      color: rgba(255, 255, 255, .7);
+      font-size: 12px;
+      line-height: 1.5
+    }
+
+    .signup-choice {
+      margin: 22px auto 0;
+      max-width: 56ch
+    }
+
+    .signup-choice-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px
+    }
+
+    .signup-choice button {
+      flex: 1 1 220px;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 10px;
+      background: #fff;
+      color: #7B4DFF;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer
+    }
+
+    .signup-choice button:hover {
+      background: rgba(255, 255, 255, .9)
+    }
+
+    .signup-pane {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.5
+    }
+
+    .signup-pane h3 {
+      margin: 0 0 10px;
+      font-size: 16px
+    }
+
+    .signup-pane pre {
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, .35);
+      font-family: 'Ubuntu Mono', ui-monospace, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      overflow-x: auto;
+      white-space: pre
+    }
+
+    .signup-pane .pane-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap
+    }
+
+    .signup-pane .pane-actions button {
+      background: #fff;
+      color: #7B4DFF;
+      border: 0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 600;
+      cursor: pointer
+    }
+
+    .signup-pane .pane-actions button.ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .5)
+    }
+
+    /* footer */
+    footer {
+      padding: 48px 0 56px;
+      background: var(--footer-bg);
+      color: rgba(255, 255, 255, .85)
+    }
+
+    .foot a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, .85);
+      transition: color .2s ease
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 13px
+    }
+
+    .foot .links {
+      display: flex;
+      gap: 22px
+    }
+
+    .foot a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, .65);
+      transition: color .2s ease
+    }
+
+    .foot a:hover {
+      color: #fff
+    }
+
+    .rdfa-meta {
+      display: none
+    }
+
+    .past-editions {
+      position: relative;
+      display: inline-block
+    }
+
+    .past-trigger {
+      cursor: pointer
+    }
+
+    /* invisible bridge so the cursor can travel from trigger to menu without losing hover */
+    .past-editions::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      height: 14px
+    }
+
+    .past-menu {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .25);
+      padding: 6px;
+      min-width: 160px;
+      display: none;
+      flex-direction: column;
+      z-index: 20
+    }
+
+    .past-editions:hover .past-menu,
+    .past-editions:focus-within .past-menu {
+      display: flex
+    }
+
+    .past-menu a {
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: var(--ink);
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap
+    }
+
+    .past-menu a:hover {
+      background: var(--bg-alt);
+      color: var(--ink)
+    }
+
+    .foot-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 500
+    }
+
+    /* reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    /* No-JS / text-browser fallback */
+    .no-js .reveal {
+      opacity: 1;
+      transform: none
+    }
+
+    .no-js .hero h1,
+    .no-js .hero-tagline,
+    .no-js .hero-cta,
+    .no-js .hero-more,
+    .no-js .hero-rule {
+      opacity: 1;
+      transform: none;
+      width: 100%;
+      animation: none
+    }
+
+    .no-js .hero-bg img {
+      animation: none;
+      transform: none
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        padding: 0 22px
+      }
+
+      .cd-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .about,
+      .signup {
+        padding: 80px 0
+      }
+
+      .facts li {
+        grid-template-columns: 140px 1fr;
+        gap: 16px
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        min-height: auto
+      }
+
+      .hero .container {
+        padding-top: 80px;
+        padding-bottom: 80px
+      }
+
+      .hero h1 {
+        padding: 24px 0;
+        font-size: clamp(24px, 7vw, 36px)
+      }
+
+      .hero-tagline {
+        letter-spacing: .16em;
+        font-size: 12px
+      }
+
+      .hero-cta {
+        padding: 12px 24px;
+        letter-spacing: .1em
+      }
+
+      .hero-more {
+        margin-top: 36px
+      }
+
+      .about,
+      .signup,
+      .countdown {
+        padding: 64px 0
+      }
+
+      .facts li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 14px 0
+      }
+
+      .facts .v-val {
+        font-size: 18px
+      }
+
+      .countdown-head {
+        margin-bottom: 20px
+      }
+
+      .countdown-head h3 {
+        font-size: 22px
+      }
+
+      .cd-cell {
+        padding: 18px 4px 14px
+      }
+
+      .cd-cell .lbl {
+        margin-top: 12px;
+        letter-spacing: .14em
+      }
+
+      .signup-form {
+        flex-direction: column;
+        border-radius: 18px;
+        padding: 8px;
+        gap: 6px
+      }
+
+      .signup-form input {
+        text-align: center;
+        padding: 12px 16px
+      }
+
+      .signup-form button {
+        border-radius: 12px;
+        padding: 12px 20px
+      }
+
+      .foot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        text-align: left
+      }
+
+      .foot .links {
+        flex-wrap: wrap;
+        gap: 16px 22px
+      }
+
+      .past-menu {
+        left: 0;
+        transform: none
+      }
+    }
+  </style>
+  </head>
+  <body about="" id="home" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# rdfa: http://www.w3.org/ns/rdfa# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ pimspace: http://www.w3.org/ns/pim/space# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# mem: http://mementoweb.org/ns# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# bibo: http://purl.org/ontology/bibo/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# earl: http://www.w3.org/ns/earl# spec: http://www.w3.org/ns/spec# odrl: http://www.w3.org/ns/odrl/2/ dio: https://w3id.org/dio# rel: https://www.w3.org/ns/iana/link-relations/relation#" typeof="schema:CreativeWork schema:Event prov:Entity">
+    <nav class="nav">
+      <div class="container nav-inner"><a class="brand" href="#top"><span class="brand-mark"><img alt="Solid logo" src="assets/solid-logo.svg" /></span>SoSy 27</a> <a class="nav-cta" href="#signup">Stay updated</a></div>
+    </nav>
+    <main>
+      <article about="" typeof="schema:Article schema:Event">
+        <div aria-hidden="true" class="rdfa-meta" rel="schema:superEvent" resource="#solid-symposium-series"><span about="#solid-symposium-series" typeof="schema:Event"><span property="schema:name">Solid Symposium</span> <span rel="schema:subEvent" resource="https://sosy2026.eu/"></span> <span rel="schema:subEvent" resource="https://sosy2025.eu/"></span> <span rel="schema:subEvent" resource="https://events.vito.be/sosy2024"></span> <span rel="schema:subEvent" resource="https://solid.ti.rw.fau.de/public/2023/solid-symposium/"></span></span></div>
+        <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="#orga-committee"><span about="#orga-committee" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en-us">Solid Symposium 2027 Organisation Committee</span> <span rel="foaf:member schema:member" resource="https://jangrau13.solidcommunity.net/profile/card#me"><span about="https://jangrau13.solidcommunity.net/profile/card#me" typeof="foaf:Person schema:Person"></span></span> <span rel="schema:contactPoint"><span typeof="schema:ContactPoint"><a href="mailto:info@sosy27.eu" property="schema:email">info@sosy27.eu</a></span></span></span></div>
+        <header class="hero" id="top">
+          <div class="hero-bg"><img alt="The SQUARE building at HSG with a meadow of red poppies in front" src="assets/square-summer.jpeg" /></div>
+          <div class="hero-grade"></div>
+          <div class="container">
+            <hr class="hero-rule top" />
+            <h1 property="schema:name"> The 5th Solid Symposium, <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, <time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></h1>
+            <hr class="hero-rule bottom" /><a class="hero-cta" href="#about">Information</a> <a class="hero-more" href="#about"><span>Learn more</span><span class="arrow">↓</span></a>
+          </div>
+        </header>
+        <section class="about" id="about" inlist="" rel="schema:hasPart" resource="#about">
+          <div class="container about-grid">
+            <div><span class="eyebrow">Information</span>
+              <h2 class="reveal in" property="schema:name">Solid Symposium 2027</h2>
+            </div>
+            <ul class="facts reveal in" datatype="rdf:HTML" property="schema:description">
+              <li><span class="k">Date</span><span class="v-val"><time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></li>
+              <li><span class="k">Location</span><span class="v-val" rel="schema:location" resource="#hsg-square"><span about="#hsg-square" typeof="schema:Place"><span property="schema:name">University of St.Gallen</span>, Switzerland<span rel="schema:address"><span typeof="schema:PostalAddress"></span></span><span rel="schema:geo"><span typeof="schema:GeoCoordinates"></span></span></span></span></li>
+              <li><span class="k">Call for contributions</span><span class="v-val">Opens Summer 2026</span></li>
+            </ul>
+          </div>
+        </section>
+        <section class="signup" id="signup" inlist="" rel="schema:hasPart" resource="#signup">
+          <div class="container" rel="schema:potentialAction" resource="#subscribe-action"><span about="#subscribe-action" typeof="schema:SubscribeAction"></span> <span class="eyebrow on-dark">Stay updated</span>
+            <h2 class="reveal in">Newsletter</h2>
+            <p class="signup-purpose reveal in">Pick how you want to sign up for the newsletter. Either way,
+            we'll deliver the newsletter to you by email.</p>
+            <div class="signup-choice reveal in" data-signup-root="">
+              <div class="signup-choice-buttons"><button data-signup-path="have" type="button">I have a Solid Pod</button> <button data-signup-path="none" type="button">I don't have a Solid Pod</button> <button data-signup-path="email" type="button">Just email me</button></div>
+            </div>
+            <p class="signup-host-note reveal in">Solid Pods created here are hosted on University of St.Gallen
+            infrastructure (<code>wiser-solid-xi.interactions.ics.unisg.ch</code>). Plain email signups are
+            handled by Formspree.</p>
+          </div>
+        </section>
+        <section class="countdown" id="countdown" inlist="" rel="schema:hasPart" resource="#countdown">
+          <div class="container">
+            <div class="countdown-head">
+              <h3>11 May 2027</h3><span class="eyebrow">Local time · St.Gallen, CH</span>
+            </div>
+            <div class="cd-grid">
+              <div class="cd-cell"><span class="num" data-cd="d">358</span><span class="lbl">Days <span class="tick"></span></span></div>
+              <div class="cd-cell"><span class="num" data-cd="h">00</span><span class="lbl">Hours</span></div>
+              <div class="cd-cell"><span class="num" data-cd="m">58</span><span class="lbl">Minutes</span></div>
+              <div class="cd-cell"><span class="num" data-cd="s">01</span><span class="lbl">Seconds</span></div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <div class="container foot">
+        <div class="foot-brand"><span class="brand-mark"><img alt="" src="assets/solid-logo.svg" /></span> SoSy 27 </div>
+        <div class="links">
+          <div class="past-editions"><a class="past-trigger" href="#">Past editions <span aria-hidden="true">▾</span></a>
+            <div class="past-menu" role="menu"><a href="https://sosy2026.eu/" rel="noopener" target="_blank">SoSy 26</a> <a href="https://sosy2025.eu/" rel="noopener" target="_blank">SoSy 25</a> <a href="https://events.vito.be/sosy2024" rel="noopener" target="_blank">SoSy 24</a> <a href="https://solid.ti.rw.fau.de/public/2023/solid-symposium/" rel="noopener" target="_blank">SoSy 23</a></div>
+          </div><a href="mailto:info@sosy27.eu?subject=Solid%20Symposium%202027%20Sponsorship">Become a sponsor</a> <a href="mailto:info@sosy27.eu">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
