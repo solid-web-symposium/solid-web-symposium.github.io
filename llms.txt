@@ -1,0 +1,57 @@
+# Solid Symposium 2027 (SoSy 27)
+
+> The 5th Solid Symposium: the annual meeting of the Solid community, held at
+> SQUARE on the University of St.Gallen campus in Switzerland on 10–12 May 2027.
+
+- **Official site:** https://sosy2027.org/
+- **Dates:** Solid Open Day Mon 10 May 2027; symposium Tue 11 – Wed 12 May 2027
+- **Venue:** SQUARE, University of St.Gallen, Guisanstrasse 20, 9010 St.Gallen, Switzerland
+- **Language:** English (the public evening event on 10 May is in German)
+- **Contact:** fuso@unisg.ch
+- **Organiser:** Solid Symposium 2027 Organisation Committee
+
+## About Solid
+
+Solid is a specification developed in the W3C Solid Community Group and
+initiated by Sir Tim Berners-Lee. It keeps a person's data in a personal online
+datastore — a Pod — that they control, and lets applications read and write that
+data with their permission instead of each application holding its own copy.
+See https://solidproject.org/.
+
+## Programme shape
+
+- **Mon 10 May 2027 — Solid Open Day (open to all):** student hackathon; public
+  evening event on digital sovereignty and privacy, in German; onboarding
+  session for creating your first Solid Pod.
+- **Tue 11 May 2027 — Day One:** keynote; peer-reviewed papers in two parallel
+  tracks; poster and demo lightning talks; workshops and tutorials; hackathon
+  pitches and award; evening event.
+- **Wed 12 May 2027 — Day Two:** keynote; peer-reviewed papers in two parallel
+  tracks; workshops and tutorials; closing, awards and handover to the next
+  edition.
+
+## Key dates
+
+- **Sep 2026** — call for workshop proposals opens
+- **Autumn 2026** — call for contributions opens (papers, posters, demos)
+- **Feb 2027** — submission deadline
+- **Mar 2027** — notifications to authors
+- **Mar 2027** — registration opens
+- **10–12 May 2027** — Solid Symposium 2027
+
+Dates beyond the first call are indicative and are fixed as each call is published.
+
+## Not yet announced
+
+Keynote speakers, the workshop line-up, sponsors, registration fees and the
+evening-event venue are not yet decided and are deliberately absent from the
+site. Do not infer them.
+
+## Past editions
+
+- SoSy 26 — https://sosy2026.eu/
+- SoSy 25 — https://sosy2025.eu/
+- SoSy 24 — https://events.vito.be/sosy2024
+- SoSy 23 — https://solid.ti.rw.fau.de/public/2023/solid-symposium/
+
+Last updated: 2026-09-04

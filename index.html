@@ -3,9 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>SoSy 27 — Solid Symposium 2027 · St.Gallen</title>
+    <title>Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen</title>
+    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." name="description" />
+    <link href="https://sosy2027.org/" rel="canonical" />
+    <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots" />
+    <meta content="#7b4dff" name="theme-color" />
+
+    <meta content="website" property="og:type" />
+    <meta content="Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen" property="og:title" />
+    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." property="og:description" />
+    <meta content="https://sosy2027.org/" property="og:url" />
+    <meta content="SoSy 27 — Solid Symposium 2027" property="og:site_name" />
+    <meta content="en_GB" property="og:locale" />
+    <meta content="https://sosy2027.org/assets/square-summer.jpeg" property="og:image" />
+    <meta content="1920" property="og:image:width" />
+    <meta content="1278" property="og:image:height" />
+    <meta content="SQUARE at the University of St.Gallen, venue of the Solid Symposium 2027" property="og:image:alt" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen" name="twitter:title" />
+    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." name="twitter:description" />
+    <meta content="https://sosy2027.org/assets/square-summer.jpeg" name="twitter:image" />
+
     <link href="assets/solid-logo.svg" rel="icon" type="image/svg+xml" />
     <link href="assets/solid-logo.svg" rel="apple-touch-icon" />
+    <link as="image" href="assets/square-summer.jpeg" rel="preload" />
     <script defer="" src="scripts/signup.js"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -921,6 +942,17 @@
       border: 1px solid rgba(255, 255, 255, .5)
     }
 
+    .foot-updated {
+      margin: 32px 0 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, .18);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .6)
+    }
+
     /* footer */
     footer {
       padding: 48px 0 56px;
@@ -1059,9 +1091,71 @@
       transform: none
     }
 
+    /* about lede */
+    .about-lede {
+      margin: 22px 0 0;
+      max-width: 46ch;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.7
+    }
+
+    .about-lede strong {
+      color: var(--ink);
+      font-weight: 500
+    }
+
+    .about-lede a {
+      color: var(--purple-1)
+    }
+
+    /* faq */
+    .faq {
+      padding: 120px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .qa {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 40px 64px;
+      border-top: 1px solid var(--rule);
+      padding-top: 44px
+    }
+
+    .qa-item h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--purple-1);
+      margin: 0 0 10px
+    }
+
+    .qa-item p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.7
+    }
+
+    .qa-item a {
+      color: var(--purple-1)
+    }
+
     @media (max-width: 900px) {
       .container {
         padding: 0 22px
+      }
+
+      .faq {
+        padding: 80px 0
+      }
+
+      .qa {
+        grid-template-columns: 1fr;
+        gap: 32px
       }
 
       .cd-grid {
@@ -1128,6 +1222,7 @@
       .signup,
       .countdown,
       .programme,
+      .faq,
       .dates {
         padding: 64px 0
       }
@@ -1194,6 +1289,417 @@
       }
     }
   </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://sosy2027.org/#website",
+            "url": "https://sosy2027.org/",
+            "name": "Solid Symposium 2027 (SoSy 27)",
+            "inLanguage": "en",
+            "about": {
+              "@id": "https://sosy2027.org/#event"
+            },
+            "publisher": {
+              "@id": "https://sosy2027.org/#orga-committee"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://sosy2027.org/#webpage",
+            "url": "https://sosy2027.org/",
+            "name": "Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen",
+            "description": "The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027.",
+            "isPartOf": {
+              "@id": "https://sosy2027.org/#website"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://sosy2027.org/assets/square-summer.jpeg",
+              "width": 1920,
+              "height": 1278
+            },
+            "inLanguage": "en",
+            "dateModified": "2026-09-04",
+            "mainEntity": {
+              "@id": "https://sosy2027.org/#event"
+            }
+          },
+          {
+            "@type": "Event",
+            "@id": "https://sosy2027.org/#event",
+            "name": "Solid Symposium 2027",
+            "alternateName": [
+              "SoSy 27",
+              "The 5th Solid Symposium"
+            ],
+            "description": "The 5th Solid Symposium (SoSy 27) is the annual meeting of the Solid community, held at SQUARE on the University of St.Gallen campus in Switzerland on 11 and 12 May 2027, preceded by the public Solid Open Day on 10 May. The programme comprises peer-reviewed papers in two parallel tracks, keynotes, workshops and tutorials, posters and demos, and a student hackathon.",
+            "startDate": "2027-05-11",
+            "endDate": "2027-05-12",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "inLanguage": "en",
+            "url": "https://sosy2027.org/",
+            "image": [
+              "https://sosy2027.org/assets/square-summer.jpeg"
+            ],
+            "location": {
+              "@id": "https://sosy2027.org/#hsg-square"
+            },
+            "organizer": {
+              "@id": "https://sosy2027.org/#orga-committee"
+            },
+            "superEvent": {
+              "@id": "https://sosy2027.org/#solid-symposium-series"
+            },
+            "subEvent": [
+              {
+                "@id": "https://sosy2027.org/#day-one"
+              },
+              {
+                "@id": "https://sosy2027.org/#day-two"
+              }
+            ],
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Solid",
+                "sameAs": [
+                  "https://solidproject.org/",
+                  "https://en.wikipedia.org/wiki/Solid_(web_decentralization_project)"
+                ]
+              },
+              {
+                "@type": "Thing",
+                "name": "Decentralised web"
+              },
+              {
+                "@type": "Thing",
+                "name": "Personal data stores"
+              },
+              {
+                "@type": "Thing",
+                "name": "Linked Data"
+              }
+            ],
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Researchers, developers and practitioners working with Solid and decentralised personal data"
+            }
+          },
+          {
+            "@type": "Event",
+            "@id": "https://sosy2027.org/#open-day",
+            "name": "Solid Open Day",
+            "startDate": "2027-05-10",
+            "endDate": "2027-05-10",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@id": "https://sosy2027.org/#hsg-square"
+            },
+            "organizer": {
+              "@id": "https://sosy2027.org/#orga-committee"
+            },
+            "inLanguage": "en",
+            "description": "A public day preceding the Solid Symposium 2027, open to all: a student hackathon, an onboarding session for creating your first Solid Pod, and a public evening event on digital sovereignty and privacy held in German.",
+            "subEvent": [
+              {
+                "@type": "Event",
+                "name": "Student hackathon",
+                "startDate": "2027-05-10",
+                "endDate": "2027-05-10",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Public evening event on digital sovereignty and privacy, in German",
+                "startDate": "2027-05-10",
+                "endDate": "2027-05-10",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Onboarding session: your first Solid Pod",
+                "startDate": "2027-05-10",
+                "endDate": "2027-05-10",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              }
+            ],
+            "isAccessibleForFree": true,
+            "superEvent": {
+              "@id": "https://sosy2027.org/#solid-symposium-series"
+            }
+          },
+          {
+            "@type": "Event",
+            "@id": "https://sosy2027.org/#day-one",
+            "name": "Solid Symposium 2027 — Day One",
+            "startDate": "2027-05-11",
+            "endDate": "2027-05-11",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@id": "https://sosy2027.org/#hsg-square"
+            },
+            "organizer": {
+              "@id": "https://sosy2027.org/#orga-committee"
+            },
+            "inLanguage": "en",
+            "description": "Keynote, peer-reviewed papers in two parallel tracks, poster and demo lightning talks, workshops and tutorials, hackathon pitches and award, and an evening event.",
+            "subEvent": [
+              {
+                "@type": "Event",
+                "name": "Keynote",
+                "startDate": "2027-05-11",
+                "endDate": "2027-05-11",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Peer-reviewed papers, two parallel tracks",
+                "startDate": "2027-05-11",
+                "endDate": "2027-05-11",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Poster and demo lightning talks",
+                "startDate": "2027-05-11",
+                "endDate": "2027-05-11",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Workshops and tutorials",
+                "startDate": "2027-05-11",
+                "endDate": "2027-05-11",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Hackathon pitches and award",
+                "startDate": "2027-05-11",
+                "endDate": "2027-05-11",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Evening event",
+                "startDate": "2027-05-11",
+                "endDate": "2027-05-11",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "Event",
+            "@id": "https://sosy2027.org/#day-two",
+            "name": "Solid Symposium 2027 — Day Two",
+            "startDate": "2027-05-12",
+            "endDate": "2027-05-12",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@id": "https://sosy2027.org/#hsg-square"
+            },
+            "organizer": {
+              "@id": "https://sosy2027.org/#orga-committee"
+            },
+            "inLanguage": "en",
+            "description": "Keynote, peer-reviewed papers in two parallel tracks, workshops and tutorials, and the closing session with awards and the handover to the next edition.",
+            "subEvent": [
+              {
+                "@type": "Event",
+                "name": "Keynote",
+                "startDate": "2027-05-12",
+                "endDate": "2027-05-12",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Peer-reviewed papers, two parallel tracks",
+                "startDate": "2027-05-12",
+                "endDate": "2027-05-12",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Workshops and tutorials",
+                "startDate": "2027-05-12",
+                "endDate": "2027-05-12",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              },
+              {
+                "@type": "Event",
+                "name": "Closing, awards and handover to the next edition",
+                "startDate": "2027-05-12",
+                "endDate": "2027-05-12",
+                "location": {
+                  "@id": "https://sosy2027.org/#hsg-square"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "EventSeries",
+            "@id": "https://sosy2027.org/#solid-symposium-series",
+            "name": "Solid Symposium",
+            "alternateName": "SoSy",
+            "description": "The annual symposium of the Solid community, held since 2023.",
+            "sameAs": [
+              "https://solid.ti.rw.fau.de/public/2023/solid-symposium/",
+              "https://events.vito.be/sosy2024",
+              "https://sosy2025.eu/",
+              "https://sosy2026.eu/",
+              "https://sosy2027.org/"
+            ]
+          },
+          {
+            "@type": "Place",
+            "@id": "https://sosy2027.org/#hsg-square",
+            "name": "SQUARE, University of St.Gallen",
+            "url": "https://www.hsg-square.ch/en/",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Guisanstrasse 20",
+              "postalCode": "9010",
+              "addressLocality": "St.Gallen",
+              "addressRegion": "St.Gallen",
+              "addressCountry": "CH"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 47.4333296,
+              "longitude": 9.3748173
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://sosy2027.org/#orga-committee",
+            "name": "Solid Symposium 2027 Organisation Committee",
+            "email": "fuso@unisg.ch",
+            "url": "https://sosy2027.org/"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://sosy2027.org/#faq",
+            "url": "https://sosy2027.org/#faq",
+            "name": "Solid Symposium 2027 — frequently asked questions",
+            "inLanguage": "en",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the Solid Symposium 2027?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and combines peer-reviewed papers, workshops and tutorials, posters and demos, a student hackathon and a public open day."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When and where does SoSy 27 take place?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Solid Open Day is on Monday 10 May 2027; the symposium itself runs on Tuesday 11 and Wednesday 12 May 2027. The venue is SQUARE on the University of St.Gallen campus, Guisanstrasse 20, 9010 St.Gallen, Switzerland."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Solid?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Solid is a specification developed in the W3C Solid Community Group and initiated by Sir Tim Berners-Lee. It keeps a person's data in a personal online datastore — a Pod — that they control, and lets applications read and write that data with their permission instead of each application holding its own copy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is any part of the symposium open to the public?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The Solid Open Day on 10 May 2027 is open to all. It includes a student hackathon, an onboarding session for creating your first Solid Pod, and a public evening event on digital sovereignty and privacy held in German."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I submit a paper, poster or demo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The call for contributions opens in autumn 2026. The submission deadline is in February 2027 and authors are notified in March 2027. Subscribe to the newsletter to be told when the call is published — the exact dates are fixed when the call goes out."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I propose a workshop or an affiliated event?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The call for workshop proposals opens in September 2026. If you are planning a workshop or an affiliated event, the organisers would like to hear about it before the call goes out — write to fuso@unisg.ch."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When does registration open?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Registration is expected to open in March 2027. Dates beyond the first call are indicative and are fixed as each call is published."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where were the previous Solid Symposia held?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Solid Symposium has been held annually since 2023: SoSy 23, SoSy 24, SoSy 25 and SoSy 26. SoSy 27 in St.Gallen is the fifth edition."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I keep up with announcements?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Subscribe to the newsletter. You can sign up with an existing Solid Pod, create a Pod hosted on University of St.Gallen infrastructure as part of signing up, or simply leave an email address."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can my organisation sponsor SoSy 27?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Write to fuso@unisg.ch to discuss sponsoring the Solid Symposium 2027."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body about="" id="home" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# rdfa: http://www.w3.org/ns/rdfa# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ pimspace: http://www.w3.org/ns/pim/space# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# mem: http://mementoweb.org/ns# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# bibo: http://purl.org/ontology/bibo/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# earl: http://www.w3.org/ns/earl# spec: http://www.w3.org/ns/spec# odrl: http://www.w3.org/ns/odrl/2/ dio: https://w3id.org/dio# rel: https://www.w3.org/ns/iana/link-relations/relation#" typeof="schema:CreativeWork schema:Event prov:Entity">
     <nav class="nav">
@@ -1204,7 +1710,7 @@
         <div aria-hidden="true" class="rdfa-meta" rel="schema:superEvent" resource="#solid-symposium-series"><span about="#solid-symposium-series" typeof="schema:Event"><span property="schema:name">Solid Symposium</span> <span rel="schema:subEvent" resource="https://sosy2026.eu/"></span> <span rel="schema:subEvent" resource="https://sosy2025.eu/"></span> <span rel="schema:subEvent" resource="https://events.vito.be/sosy2024"></span> <span rel="schema:subEvent" resource="https://solid.ti.rw.fau.de/public/2023/solid-symposium/"></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="#orga-committee"><span about="#orga-committee" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en-us">Solid Symposium 2027 Organisation Committee</span> <span rel="foaf:member schema:member" resource="https://jangrau13.solidcommunity.net/profile/card#me"><span about="https://jangrau13.solidcommunity.net/profile/card#me" typeof="foaf:Person schema:Person"></span></span> <span rel="schema:contactPoint"><span typeof="schema:ContactPoint"><a href="mailto:fuso@unisg.ch" property="schema:email">fuso@unisg.ch</a></span></span></span></div>
         <header class="hero" id="top">
-          <div class="hero-bg"><img alt="The SQUARE building at HSG with a meadow of red poppies in front" src="assets/square-summer.jpeg" /></div>
+          <div class="hero-bg"><img alt="The SQUARE building at HSG with a meadow of red poppies in front" decoding="async" fetchpriority="high" height="1278" src="assets/square-summer.jpeg" width="1920" /></div>
           <div class="hero-grade"></div>
           <div class="container">
             <hr class="hero-rule top" />
@@ -1216,10 +1722,11 @@
           <div class="container about-grid">
             <div><span class="eyebrow">Information</span>
               <h2 class="reveal in" property="schema:name">Solid Symposium 2027</h2>
+              <p class="about-lede reveal in"><strong>The Solid Symposium is the annual meeting of the <a href="https://solidproject.org/" rel="noopener" target="_blank">Solid</a> community</strong> — the researchers, developers and practitioners building on Solid, the specification developed in the W3C Solid Community Group that keeps a person's data in a Pod they control, separate from the applications that read and write it. SoSy 27 is the fifth edition: a public Solid Open Day on 10 May 2027, followed by the two-day symposium on 11 and 12 May at SQUARE on the University of St.Gallen campus.</p>
             </div>
             <ul class="facts reveal in" datatype="rdf:HTML" property="schema:description">
               <li><span class="k">Date</span><span class="v-val"><time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></li>
-              <li><span class="k">Location</span><span class="v-val" rel="schema:location" resource="#hsg-square"><span about="#hsg-square" typeof="schema:Place"><span property="schema:name">University of St.Gallen</span>, Switzerland<span rel="schema:address"><span typeof="schema:PostalAddress"></span></span><span rel="schema:geo"><span typeof="schema:GeoCoordinates"></span></span></span></span></li>
+              <li><span class="k">Location</span><span class="v-val" rel="schema:location" resource="#hsg-square"><span about="#hsg-square" typeof="schema:Place"><span property="schema:name">University of St.Gallen</span>, Switzerland<span rel="schema:address"><span typeof="schema:PostalAddress"><span content="SQUARE, Guisanstrasse 20" property="schema:streetAddress"></span><span content="St.Gallen" property="schema:addressLocality"></span><span content="9010" property="schema:postalCode"></span><span content="CH" property="schema:addressCountry"></span></span></span><span rel="schema:geo"><span typeof="schema:GeoCoordinates"><span content="47.4333296" datatype="xsd:decimal" property="schema:latitude"></span><span content="9.3748173" datatype="xsd:decimal" property="schema:longitude"></span></span></span></span></span></li>
               <li><span class="k">Open day</span><span class="v-val"><time datatype="xsd:date" datetime="2027-05-10">10 May 2027</time> — Solid Open Day, open to all</span></li>
               <li><span class="k">Call for contributions</span><span class="v-val"><a href="#dates">Opens autumn 2026</a></span></li>
             </ul>
@@ -1272,8 +1779,8 @@
             <ul class="facts reveal in">
               <li><span class="k">Sep 2026</span><span class="v-val">Call for workshop proposals <span class="tag now">Opening soon</span></span></li>
               <li><span class="k">Autumn 2026</span><span class="v-val">Call for contributions — papers, posters and demos</span></li>
-              <li><span class="k">1 Feb 2027</span><span class="v-val">Submission deadline</span></li>
-              <li><span class="k">11 Mar 2027</span><span class="v-val">Notifications to authors</span></li>
+              <li><span class="k">Feb 2027</span><span class="v-val">Submission deadline</span></li>
+              <li><span class="k">Mar 2027</span><span class="v-val">Notifications to authors</span></li>
               <li><span class="k">Mar 2027</span><span class="v-val">Registration opens</span></li>
               <li><span class="k">10–12 May 2027</span><span class="v-val">Solid Symposium 2027</span></li>
             </ul>
@@ -1281,6 +1788,77 @@
             call is published. Planning a workshop or an affiliated event? We would like to hear about it before
             the call goes out — write to <a href="mailto:fuso@unisg.ch?subject=SoSy%2027%20workshop%20proposal">fuso@unisg.ch</a>,
             or subscribe below to be told the moment the call opens.</p>
+          </div>
+        </section>
+        <section class="faq" id="faq" inlist="" rel="schema:hasPart" resource="#faq">
+          <div class="container">
+            <div class="section-head reveal in"><span class="eyebrow">Questions</span>
+              <h2>Frequently asked questions</h2>
+            </div>
+            <div class="qa reveal in">
+              <div class="qa-item">
+                <h3>What is the Solid Symposium 2027?</h3>
+                <p>The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community
+                conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and
+                combines peer-reviewed papers, workshops and tutorials, posters and demos, a student hackathon
+                and a public open day.</p>
+              </div>
+              <div class="qa-item">
+                <h3>When and where does SoSy 27 take place?</h3>
+                <p>The Solid Open Day is on Monday 10 May 2027; the symposium itself runs on Tuesday 11 and
+                Wednesday 12 May 2027. The venue is SQUARE on the University of St.Gallen campus,
+                Guisanstrasse 20, 9010 St.Gallen, Switzerland.</p>
+              </div>
+              <div class="qa-item">
+                <h3>What is Solid?</h3>
+                <p>Solid is a specification developed in the W3C Solid Community Group and initiated
+                by Sir Tim Berners-Lee. It keeps a person's data in a personal online datastore — a Pod —
+                that they control, and lets applications read and write that data with their permission
+                instead of each application holding its own copy.</p>
+              </div>
+              <div class="qa-item">
+                <h3>Is any part of the symposium open to the public?</h3>
+                <p>Yes. The Solid Open Day on 10 May 2027 is open to all. It includes a student hackathon, an
+                onboarding session for creating your first Solid Pod, and a public evening event on digital
+                sovereignty and privacy held in German.</p>
+              </div>
+              <div class="qa-item">
+                <h3>How can I submit a paper, poster or demo?</h3>
+                <p>The call for contributions opens in autumn 2026. The submission deadline is in February
+                2027 and authors are notified in March 2027. <a href="#signup">Subscribe to the newsletter</a>
+                to be told when the call is published — the exact dates are fixed when the call goes out.</p>
+              </div>
+              <div class="qa-item">
+                <h3>How do I propose a workshop or an affiliated event?</h3>
+                <p>The call for workshop proposals opens in September 2026. If you are planning a workshop or an
+                affiliated event, the organisers would like to hear about it before the call goes out — write to
+                <a href="mailto:fuso@unisg.ch?subject=SoSy%2027%20workshop%20proposal">fuso@unisg.ch</a>.</p>
+              </div>
+              <div class="qa-item">
+                <h3>When does registration open?</h3>
+                <p>Registration is expected to open in March 2027. Dates beyond the first call are indicative and
+                are fixed as each call is published.</p>
+              </div>
+              <div class="qa-item">
+                <h3>Where were the previous Solid Symposia held?</h3>
+                <p>The Solid Symposium has been held annually since 2023:
+                <a href="https://solid.ti.rw.fau.de/public/2023/solid-symposium/" rel="noopener" target="_blank">SoSy 23</a>,
+                <a href="https://events.vito.be/sosy2024" rel="noopener" target="_blank">SoSy 24</a>,
+                <a href="https://sosy2025.eu/" rel="noopener" target="_blank">SoSy 25</a> and
+                <a href="https://sosy2026.eu/" rel="noopener" target="_blank">SoSy 26</a>. SoSy 27 in St.Gallen
+                is the fifth edition.</p>
+              </div>
+              <div class="qa-item">
+                <h3>How do I keep up with announcements?</h3>
+                <p>Subscribe to the newsletter. You can sign up with an existing Solid Pod, create a Pod hosted on
+                University of St.Gallen infrastructure as part of signing up, or simply leave an email address.</p>
+              </div>
+              <div class="qa-item">
+                <h3>How can my organisation sponsor SoSy 27?</h3>
+                <p>Write to <a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">fuso@unisg.ch</a>
+                to discuss sponsoring the Solid Symposium 2027.</p>
+              </div>
+            </div>
           </div>
         </section>
         <section class="signup" id="signup" inlist="" rel="schema:hasPart" resource="#signup">
@@ -1319,6 +1897,9 @@
             <div class="past-menu" role="menu"><a href="https://sosy2026.eu/" rel="noopener" target="_blank">SoSy 26</a> <a href="https://sosy2025.eu/" rel="noopener" target="_blank">SoSy 25</a> <a href="https://events.vito.be/sosy2024" rel="noopener" target="_blank">SoSy 24</a> <a href="https://solid.ti.rw.fau.de/public/2023/solid-symposium/" rel="noopener" target="_blank">SoSy 23</a></div>
           </div><a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">Become a sponsor</a> <a href="mailto:fuso@unisg.ch">Contact</a>
         </div>
+      </div>
+      <div class="container">
+        <p class="foot-updated">Page updated <time datetime="2026-09-04" property="schema:dateModified">4 September 2026</time></p>
       </div>
     </footer>
   </body>
