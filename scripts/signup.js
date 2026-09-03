@@ -21,7 +21,7 @@
   const ACCOUNT_BASE  = SERVER_BASE + '.account/';
   const ORGANIZER_WEBID = SERVER_BASE + 'sosy27-dokieli/profile/card#me';
   const ORGANIZER_INBOX = SERVER_BASE + 'sosy27-dokieli/inbox/';
-  const NEWSLETTER_IRI  = 'https://sosy27.eu/#newsletter';
+  const NEWSLETTER_IRI  = 'https://sosy2027.org/#newsletter';
   const POW_BITS = 20;
 
   const enc = new TextEncoder();
@@ -402,7 +402,7 @@
         renderEmailSuccess(pane, email);
       } catch (err) {
         console.error(err);
-        paneError(pane, err.message || 'Network error. Please email info@sosy27.eu instead.');
+        paneError(pane, err.message || 'Network error. Please email fuso@unisg.ch instead.');
         submit.disabled = false;
         input.disabled = false;
       }
