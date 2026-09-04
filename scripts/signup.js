@@ -347,7 +347,7 @@
     pane.className = 'signup-pane';
     pane.innerHTML = `
       <h3>Email-only newsletter signup</h3>
-      <p>If you'd rather not deal with Solid right now, just leave us your
+      <p>If you'd rather not use your Solid pod for receiving the newsletter, just leave us your
         email and we'll send the newsletter the old-fashioned way. Your address
         is handled by <a href="https://formspree.io/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Formspree</a>
         and forwarded to the symposium organizers.</p>
