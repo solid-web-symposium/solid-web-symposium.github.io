@@ -7,6 +7,10 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
+      <image:loc>https://sosy2027.org/assets/square-aerial.jpeg</image:loc>
+      <image:title>SQUARE and the HSG campus above St.Gallen</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://sosy2027.org/assets/square-summer.jpeg</image:loc>
       <image:title>SQUARE at the University of St.Gallen</image:title>
     </image:image>

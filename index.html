@@ -6,6 +6,9 @@
     <title>Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen</title>
     <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." name="description" />
     <link href="https://sosy2027.org/" rel="canonical" />
+    <link href="https://sosy2027.org/" hreflang="en" rel="alternate" />
+    <link href="https://sosy2027.org/" hreflang="x-default" rel="alternate" />
+    <link href="/llms.txt" rel="alternate" title="llms.txt — plain-text summary for language models" type="text/plain" />
     <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots" />
     <meta content="#7b4dff" name="theme-color" />
 
@@ -15,22 +18,26 @@
     <meta content="https://sosy2027.org/" property="og:url" />
     <meta content="SoSy 27 — Solid Symposium 2027" property="og:site_name" />
     <meta content="en_GB" property="og:locale" />
-    <meta content="https://sosy2027.org/assets/square-summer.jpeg" property="og:image" />
+    <meta content="https://sosy2027.org/assets/square-aerial.jpeg" property="og:image" />
     <meta content="1920" property="og:image:width" />
-    <meta content="1278" property="og:image:height" />
-    <meta content="SQUARE at the University of St.Gallen, venue of the Solid Symposium 2027" property="og:image:alt" />
+    <meta content="1080" property="og:image:height" />
+    <meta content="Aerial view of SQUARE on the University of St.Gallen campus, venue of the Solid Symposium 2027" property="og:image:alt" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen" name="twitter:title" />
     <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." name="twitter:description" />
-    <meta content="https://sosy2027.org/assets/square-summer.jpeg" name="twitter:image" />
+    <meta content="https://sosy2027.org/assets/square-aerial.jpeg" name="twitter:image" />
 
     <link href="assets/solid-logo.svg" rel="icon" type="image/svg+xml" />
-    <link href="assets/solid-logo.svg" rel="apple-touch-icon" />
-    <link as="image" href="assets/square-summer.jpeg" rel="preload" />
+    <link href="/favicon.ico" rel="icon" sizes="48x48" type="image/x-icon" />
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link as="image" href="assets/square-aerial.jpeg" rel="preload" />
     <script defer="" src="scripts/signup.js"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all';this.onload=null" rel="stylesheet" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+    </noscript>
     <style>
     @font-face {
       font-family: 'Ubuntu Mono';
@@ -204,22 +211,56 @@
     }
 
     .hero-bg img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
       transform: scale(1.12);
       transform-origin: center;
-      animation: heroZoom 14s ease-out forwards;
+      opacity: 0;
+      animation: heroCycle 12s linear infinite, heroZoom 12s ease-in-out infinite;
+    }
+
+    /* second key visual runs the same cycle, half a turn behind */
+    .hero-bg img+img {
+      animation-delay: -6s, -6s
+    }
+
+    @keyframes heroCycle {
+      0% {
+        opacity: 1
+      }
+
+      42% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0
+      }
+
+      92% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
     }
 
     @keyframes heroZoom {
-      from {
+      0% {
         transform: scale(1.12);
       }
 
-      to {
+      50% {
         transform: scale(1.0);
+      }
+
+      100% {
+        transform: scale(1.12);
       }
     }
 
@@ -557,6 +598,77 @@
       border-bottom: 1px solid var(--rule)
     }
 
+    /* organisers */
+    .organisers {
+      padding: 84px 0 96px;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .orga-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 28px
+    }
+
+    .orga {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 28px;
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease
+    }
+
+    .orga:hover {
+      border-color: var(--purple-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(30, 20, 70, .08)
+    }
+
+    /* fixed line box keeps a round mark and a wide wordmark optically level */
+    .orga-logo {
+      display: block;
+      height: 56px;
+      line-height: 56px
+    }
+
+    .orga-logo img {
+      display: inline-block;
+      vertical-align: middle;
+      height: 56px;
+      width: auto;
+      max-width: 100%
+    }
+
+    .orga-logo.wordmark img {
+      height: auto;
+      width: 150px
+    }
+
+    .orga-name {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 19px;
+      line-height: 1.25;
+      text-wrap: balance;
+      color: var(--ink)
+    }
+
+    .orga-role {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink-soft)
+    }
+
     .countdown-head {
       display: flex;
       align-items: baseline;
@@ -800,6 +912,15 @@
 
     @media (prefers-reduced-motion: reduce) {
 
+      .hero-bg img {
+        animation: heroCycle 12s linear infinite;
+        transform: none
+      }
+
+      .hero-bg img+img {
+        animation-delay: -6s
+      }
+
       .signup-success .logo-spin,
       .signup-success.done .logo-spin {
         animation: none;
@@ -953,6 +1074,19 @@
       color: rgba(255, 255, 255, .6)
     }
 
+    .foot-analytics {
+      margin: 10px 0 0;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .foot-analytics a {
+      color: inherit;
+      text-decoration: underline
+    }
+
     /* footer */
     footer {
       padding: 48px 0 56px;
@@ -1088,7 +1222,12 @@
 
     .no-js .hero-bg img {
       animation: none;
-      transform: none
+      transform: none;
+      opacity: 1
+    }
+
+    .no-js .hero-bg img+img {
+      display: none
     }
 
     /* about lede */
@@ -1145,6 +1284,10 @@
     }
 
     @media (max-width: 900px) {
+      .orga-grid {
+        grid-template-columns: 1fr
+      }
+
       .container {
         padding: 0 22px
       }
@@ -1190,6 +1333,25 @@
     }
 
     @media (max-width: 560px) {
+      .orga {
+        gap: 14px;
+        padding: 22px
+      }
+
+      .orga-logo,
+      .orga-logo img {
+        height: 48px
+      }
+
+      .orga-logo {
+        line-height: 48px
+      }
+
+      .orga-logo.wordmark img {
+        height: auto;
+        width: 128px
+      }
+
       .hero {
         min-height: auto
       }
@@ -1318,12 +1480,20 @@
             },
             "primaryImageOfPage": {
               "@type": "ImageObject",
-              "url": "https://sosy2027.org/assets/square-summer.jpeg",
+              "url": "https://sosy2027.org/assets/square-aerial.jpeg",
               "width": 1920,
-              "height": 1278
+              "height": 1080
             },
             "inLanguage": "en",
             "dateModified": "2026-09-04",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [
+                ".hero h1",
+                ".about-lede",
+                ".facts"
+              ]
+            },
             "mainEntity": {
               "@id": "https://sosy2027.org/#event"
             }
@@ -1344,6 +1514,7 @@
             "inLanguage": "en",
             "url": "https://sosy2027.org/",
             "image": [
+              "https://sosy2027.org/assets/square-aerial.jpeg",
               "https://sosy2027.org/assets/square-summer.jpeg"
             ],
             "location": {
@@ -1385,6 +1556,7 @@
                 "name": "Linked Data"
               }
             ],
+            "keywords": "Solid, Solid Protocol, Solid Pods, decentralised web, personal data stores, Linked Data, W3C Solid Community Group, Solid Symposium, SoSy 27, St.Gallen, Switzerland, May 2027",
             "audience": {
               "@type": "Audience",
               "audienceType": "Researchers, developers and practitioners working with Solid and decentralised personal data"
@@ -1599,6 +1771,18 @@
               "@type": "GeoCoordinates",
               "latitude": 47.4333296,
               "longitude": 9.3748173
+            },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=47.4333296,9.3748173",
+            "containedInPlace": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of St.Gallen",
+              "alternateName": "HSG",
+              "url": "https://www.unisg.ch/"
+            },
+            "photo": {
+              "@type": "ImageObject",
+              "url": "https://sosy2027.org/assets/square-aerial.jpeg",
+              "caption": "Aerial view of SQUARE on the University of St.Gallen campus"
             }
           },
           {
@@ -1606,7 +1790,43 @@
             "@id": "https://sosy2027.org/#orga-committee",
             "name": "Solid Symposium 2027 Organisation Committee",
             "email": "fuso@unisg.ch",
-            "url": "https://sosy2027.org/"
+            "url": "https://sosy2027.org/",
+            "parentOrganization": [
+              {
+                "@id": "https://futuresociety.ch/#organization"
+              },
+              {
+                "@id": "https://ics.unisg.ch/#organization"
+              }
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://futuresociety.ch/#organization",
+            "name": "Future Society Hub (FuSo)",
+            "alternateName": "FuSo",
+            "description": "Cross-disciplinary research hub fusing computer science and law at the University of St.Gallen.",
+            "url": "https://futuresociety.ch/",
+            "logo": "https://sosy2027.org/assets/fuso-logo.svg",
+            "parentOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of St.Gallen",
+              "url": "https://www.unisg.ch/"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ics.unisg.ch/#organization",
+            "name": "Institute of Computer Science (ICS-HSG)",
+            "alternateName": "ICS-HSG",
+            "description": "Research institute for computer science at the University of St.Gallen.",
+            "url": "https://ics.unisg.ch/",
+            "logo": "https://sosy2027.org/assets/hsg-logo.png",
+            "parentOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of St.Gallen",
+              "url": "https://www.unisg.ch/"
+            }
           },
           {
             "@type": "FAQPage",
@@ -1712,8 +1932,10 @@
       <article about="" typeof="schema:Article schema:Event">
         <div aria-hidden="true" class="rdfa-meta" rel="schema:superEvent" resource="#solid-symposium-series"><span about="#solid-symposium-series" typeof="schema:Event"><span property="schema:name">Solid Symposium</span> <span rel="schema:subEvent" resource="https://sosy2026.eu/"></span> <span rel="schema:subEvent" resource="https://sosy2025.eu/"></span> <span rel="schema:subEvent" resource="https://events.vito.be/sosy2024"></span> <span rel="schema:subEvent" resource="https://solid.ti.rw.fau.de/public/2023/solid-symposium/"></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="#orga-committee"><span about="#orga-committee" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en-us">Solid Symposium 2027 Organisation Committee</span> <span rel="foaf:member schema:member" resource="https://jangrau13.solidcommunity.net/profile/card#me"><span about="https://jangrau13.solidcommunity.net/profile/card#me" typeof="foaf:Person schema:Person"></span></span> <span rel="schema:contactPoint"><span typeof="schema:ContactPoint"><a href="mailto:fuso@unisg.ch" property="schema:email">fuso@unisg.ch</a></span></span></span></div>
+        <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://futuresociety.ch/#organization"><span about="https://futuresociety.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Future Society Hub (FuSo)</span> <span content="FuSo" property="schema:alternateName"></span> <span rel="schema:url" resource="https://futuresociety.ch/"></span></span></div>
+        <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://ics.unisg.ch/#organization"><span about="https://ics.unisg.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Institute of Computer Science (ICS-HSG)</span> <span content="ICS-HSG" property="schema:alternateName"></span> <span rel="schema:url" resource="https://ics.unisg.ch/"></span></span></div>
         <header class="hero" id="top">
-          <div class="hero-bg"><img alt="The SQUARE building at HSG with a meadow of red poppies in front" decoding="async" fetchpriority="high" height="1278" src="assets/square-summer.jpeg" width="1920" /></div>
+          <div class="hero-bg"><img alt="Aerial view of the SQUARE building on the HSG campus above the city of St. Gallen, with the Säntis massif on the horizon" decoding="async" fetchpriority="high" height="1080" src="assets/square-aerial.jpeg" width="1920" /> <img alt="The SQUARE building at HSG with a meadow of red poppies in front" decoding="async" fetchpriority="low" height="1278" src="assets/square-summer.jpeg" width="1920" /></div>
           <div class="hero-grade"></div>
           <div class="container">
             <hr class="hero-rule top" />
@@ -1890,6 +2112,11 @@
             </div>
           </div>
         </section>
+        <section class="organisers" id="organisers" inlist="" rel="schema:hasPart" resource="#organisers">
+          <div class="container"><span class="eyebrow">Organised by</span>
+            <div class="orga-grid reveal in"><a class="orga" href="https://futuresociety.ch/" rel="noopener" target="_blank"><span class="orga-logo"><img alt="Future Society Hub (FuSo) logo" height="595" src="assets/fuso-logo.svg" width="595" /></span> <span><span class="orga-name">Future Society Hub (FuSo)</span><span class="orga-role">Cross-disciplinary research hub fusing computer science and law, University of St.Gallen</span></span></a> <a class="orga" href="https://ics.unisg.ch/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute of Computer Science (ICS-HSG)</span><span class="orga-role">Research institute for computer science at the University of St.Gallen</span></span></a> <a class="orga" href="https://ile.unisg.ch/en/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute for Law and Economics (ILE-HSG)</span><span class="orga-role">Research institute for law and economics at the University of St.Gallen</span></span></a></div>
+          </div>
+        </section>
       </article>
     </main>
     <footer>
@@ -1903,6 +2130,7 @@
       </div>
       <div class="container">
         <p class="foot-updated">Page updated <time datetime="2026-09-04" property="schema:dateModified">4 September 2026</time></p>
+        <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
     </footer>
   </body>

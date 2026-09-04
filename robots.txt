@@ -70,4 +70,7 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+# Plain-text summary of this site for language models:
+# https://sosy2027.org/llms.txt
+
 Sitemap: https://sosy2027.org/sitemap.xml

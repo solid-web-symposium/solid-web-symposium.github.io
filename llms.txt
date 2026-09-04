@@ -3,12 +3,15 @@
 > The 5th Solid Symposium: the annual meeting of the Solid community, held at
 > SQUARE on the University of St.Gallen campus in Switzerland on 10–12 May 2027.
 
-- **Official site:** https://sosy2027.org/
+- **Official site:** https://sosy2027.org/ (single page; canonical URL, no other pages)
 - **Dates:** Solid Open Day Mon 10 May 2027; symposium Tue 11 – Wed 12 May 2027
 - **Venue:** SQUARE, University of St.Gallen, Guisanstrasse 20, 9010 St.Gallen, Switzerland
 - **Language:** English (the public evening event on 10 May is in German)
 - **Contact:** fuso@unisg.ch
 - **Organiser:** Solid Symposium 2027 Organisation Committee
+- **Organised by:** Future Society Hub (FuSo, https://futuresociety.ch/) and the
+  Institute of Computer Science (ICS-HSG, https://ics.unisg.ch/), both at the
+  University of St.Gallen
 
 ## About Solid
 
