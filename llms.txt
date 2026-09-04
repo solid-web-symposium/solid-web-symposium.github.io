@@ -9,9 +9,10 @@
 - **Language:** English (the public evening event on 10 May is in German)
 - **Contact:** fuso@unisg.ch
 - **Organiser:** Solid Symposium 2027 Organisation Committee
-- **Organised by:** Future Society Hub (FuSo, https://futuresociety.ch/) and the
-  Institute of Computer Science (ICS-HSG, https://ics.unisg.ch/), both at the
-  University of St.Gallen
+- **Organised by:** Future Society Hub (FuSo, https://futuresociety.ch/), the
+  Institute of Computer Science (ICS-HSG, https://ics.unisg.ch/) and the
+  Institute for Law and Economics (ILE-HSG, https://ile.unisg.ch/en/), all at
+  the University of St.Gallen
 
 ## About Solid
 

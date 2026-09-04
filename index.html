@@ -635,21 +635,21 @@
     /* fixed line box keeps a round mark and a wide wordmark optically level */
     .orga-logo {
       display: block;
-      height: 56px;
-      line-height: 56px
+      height: 62px;
+      line-height: 62px
     }
 
     .orga-logo img {
       display: inline-block;
       vertical-align: middle;
-      height: 56px;
+      height: 62px;
       width: auto;
       max-width: 100%
     }
 
     .orga-logo.wordmark img {
       height: auto;
-      width: 150px
+      width: 162px
     }
 
     .orga-name {
@@ -1797,6 +1797,9 @@
               },
               {
                 "@id": "https://ics.unisg.ch/#organization"
+              },
+              {
+                "@id": "https://ile.unisg.ch/#organization"
               }
             ]
           },
@@ -1808,6 +1811,20 @@
             "description": "Cross-disciplinary research hub fusing computer science and law at the University of St.Gallen.",
             "url": "https://futuresociety.ch/",
             "logo": "https://sosy2027.org/assets/fuso-logo.svg",
+            "parentOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of St.Gallen",
+              "url": "https://www.unisg.ch/"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ile.unisg.ch/#organization",
+            "name": "Institute for Law and Economics (ILE-HSG)",
+            "alternateName": "ILE-HSG",
+            "description": "Research institute for law and economics at the University of St.Gallen.",
+            "url": "https://ile.unisg.ch/en/",
+            "logo": "https://sosy2027.org/assets/hsg-logo.png",
             "parentOrganization": {
               "@type": "CollegeOrUniversity",
               "name": "University of St.Gallen",
@@ -1934,6 +1951,7 @@
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="#orga-committee"><span about="#orga-committee" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en-us">Solid Symposium 2027 Organisation Committee</span> <span rel="foaf:member schema:member" resource="https://jangrau13.solidcommunity.net/profile/card#me"><span about="https://jangrau13.solidcommunity.net/profile/card#me" typeof="foaf:Person schema:Person"></span></span> <span rel="schema:contactPoint"><span typeof="schema:ContactPoint"><a href="mailto:fuso@unisg.ch" property="schema:email">fuso@unisg.ch</a></span></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://futuresociety.ch/#organization"><span about="https://futuresociety.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Future Society Hub (FuSo)</span> <span content="FuSo" property="schema:alternateName"></span> <span rel="schema:url" resource="https://futuresociety.ch/"></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://ics.unisg.ch/#organization"><span about="https://ics.unisg.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Institute of Computer Science (ICS-HSG)</span> <span content="ICS-HSG" property="schema:alternateName"></span> <span rel="schema:url" resource="https://ics.unisg.ch/"></span></span></div>
+        <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://ile.unisg.ch/#organization"><span about="https://ile.unisg.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Institute for Law and Economics (ILE-HSG)</span> <span content="ILE-HSG" property="schema:alternateName"></span> <span rel="schema:url" resource="https://ile.unisg.ch/en/"></span></span></div>
         <header class="hero" id="top">
           <div class="hero-bg"><img alt="Aerial view of the SQUARE building on the HSG campus above the city of St. Gallen, with the Säntis massif on the horizon" decoding="async" fetchpriority="high" height="1080" src="assets/square-aerial.jpeg" width="1920" /> <img alt="The SQUARE building at HSG with a meadow of red poppies in front" decoding="async" fetchpriority="low" height="1278" src="assets/square-summer.jpeg" width="1920" /></div>
           <div class="hero-grade"></div>
