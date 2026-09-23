@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <title>Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen</title>
-    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." name="description" />
+    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027, opening with a public Solid Open Day on digital sovereignty." name="description" />
     <link href="https://sosy2027.org/" rel="canonical" />
     <link href="https://sosy2027.org/" hreflang="en" rel="alternate" />
     <link href="https://sosy2027.org/" hreflang="x-default" rel="alternate" />
@@ -14,7 +14,7 @@
 
     <meta content="website" property="og:type" />
     <meta content="Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen" property="og:title" />
-    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." property="og:description" />
+    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027, opening with a public Solid Open Day on digital sovereignty." property="og:description" />
     <meta content="https://sosy2027.org/" property="og:url" />
     <meta content="SoSy 27 — Solid Symposium 2027" property="og:site_name" />
     <meta content="en_GB" property="og:locale" />
@@ -24,7 +24,7 @@
     <meta content="Aerial view of SQUARE on the University of St.Gallen campus, venue of the Solid Symposium 2027" property="og:image:alt" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen" name="twitter:title" />
-    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027." name="twitter:description" />
+    <meta content="The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027, opening with a public Solid Open Day on digital sovereignty." name="twitter:description" />
     <meta content="https://sosy2027.org/assets/square-aerial.jpeg" name="twitter:image" />
 
     <link href="assets/solid-logo.svg" rel="icon" type="image/svg+xml" />
@@ -431,6 +431,7 @@
     }
 
     .hero-openday .k {
+      flex-shrink: 0;
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: .14em;
@@ -438,6 +439,14 @@
       border-radius: 999px;
       background: var(--coral);
       color: #fff
+    }
+
+    @media (max-width: 600px) {
+      .hero-openday {
+        max-width: 100%;
+        border-radius: 22px;
+        line-height: 1.5
+      }
     }
 
     /* about — minimal: title + facts list */
@@ -1535,7 +1544,7 @@
             "@id": "https://sosy2027.org/#webpage",
             "url": "https://sosy2027.org/",
             "name": "Solid Symposium 2027 (SoSy 27) — 10–12 May, St.Gallen",
-            "description": "The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027.",
+            "description": "The 5th Solid Symposium (SoSy 27) brings the Solid decentralised-data community to the University of St.Gallen, Switzerland, on 10–12 May 2027, opening with a public Solid Open Day on digital sovereignty.",
             "isPartOf": {
               "@id": "https://sosy2027.org/#website"
             },
@@ -1546,7 +1555,7 @@
               "height": 1080
             },
             "inLanguage": "en",
-            "dateModified": "2026-09-04",
+            "dateModified": "2026-09-23",
             "speakable": {
               "@type": "SpeakableSpecification",
               "cssSelector": [
@@ -1567,7 +1576,7 @@
               "SoSy 27",
               "The 5th Solid Symposium"
             ],
-            "description": "The 5th Solid Symposium (SoSy 27) is the annual meeting of the Solid community, held at SQUARE on the University of St.Gallen campus in Switzerland on 11 and 12 May 2027, preceded by the public Solid Open Day on 10 May. The programme comprises peer-reviewed papers in two parallel tracks, keynotes, workshops and tutorials, posters and demos, and a student hackathon.",
+            "description": "The 5th Solid Symposium (SoSy 27) is the annual meeting of the Solid community, held at SQUARE on the University of St.Gallen campus in Switzerland on 11 and 12 May 2027, preceded by the public Solid Open Day on digital sovereignty on 10 May. The programme comprises peer-reviewed papers in two parallel tracks, keynotes, workshops and tutorials, posters and demos, and a student hackathon.",
             "startDate": "2027-05-11",
             "endDate": "2027-05-12",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -1614,10 +1623,15 @@
               },
               {
                 "@type": "Thing",
+                "name": "Digital sovereignty",
+                "sameAs": "https://en.wikipedia.org/wiki/Digital_sovereignty"
+              },
+              {
+                "@type": "Thing",
                 "name": "Linked Data"
               }
             ],
-            "keywords": "Solid, Solid Protocol, Solid Pods, decentralised web, personal data stores, Linked Data, W3C Solid Community Group, Solid Symposium, SoSy 27, St.Gallen, Switzerland, May 2027",
+            "keywords": "Solid, Solid Protocol, Solid Pods, digital sovereignty, data sovereignty, decentralised web, personal data stores, Linked Data, W3C Solid Community Group, Solid Symposium, SoSy 27, St.Gallen, Switzerland, May 2027",
             "audience": {
               "@type": "Audience",
               "audienceType": "Researchers, developers and practitioners working with Solid and decentralised personal data"
@@ -1626,7 +1640,8 @@
           {
             "@type": "Event",
             "@id": "https://sosy2027.org/#open-day",
-            "name": "Solid Open Day",
+            "name": "Solid Open Day: Digital Sovereignty",
+            "alternateName": "Solid Open Day",
             "startDate": "2027-05-10",
             "endDate": "2027-05-10",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -1638,11 +1653,16 @@
               "@id": "https://sosy2027.org/#orga-committee"
             },
             "inLanguage": "en",
-            "description": "A public day preceding the Solid Symposium 2027, open to all: a student hackathon, an onboarding session for creating your first Solid Pod, and a public evening event on digital sovereignty and privacy held in German.",
+            "description": "A public day on digital sovereignty preceding the Solid Symposium 2027, open to all: who controls our data, and how Solid puts that control back with people, organisations and public institutions. The day comprises a student hackathon on building sovereign applications with Solid, an onboarding session for creating your first Solid Pod, and a public evening event on digital sovereignty held in German.",
+            "about": {
+              "@type": "Thing",
+              "name": "Digital sovereignty",
+              "sameAs": "https://en.wikipedia.org/wiki/Digital_sovereignty"
+            },
             "subEvent": [
               {
                 "@type": "Event",
-                "name": "Student hackathon",
+                "name": "Student hackathon: building for digital sovereignty with Solid",
                 "startDate": "2027-05-10",
                 "endDate": "2027-05-10",
                 "location": {
@@ -1651,7 +1671,7 @@
               },
               {
                 "@type": "Event",
-                "name": "Public evening event on digital sovereignty and privacy, in German",
+                "name": "Public evening event on digital sovereignty, in German",
                 "startDate": "2027-05-10",
                 "endDate": "2027-05-10",
                 "location": {
@@ -1918,7 +1938,7 @@
                 "name": "What is the Solid Symposium 2027?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and combines peer-reviewed papers, workshops and tutorials, posters and demos, a student hackathon and a public open day."
+                  "text": "The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and combines peer-reviewed papers, workshops and tutorials, posters and demos, a student hackathon and a public open day on digital sovereignty."
                 }
               },
               {
@@ -1939,10 +1959,18 @@
               },
               {
                 "@type": "Question",
+                "name": "How does Solid relate to digital sovereignty?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Digital sovereignty is the ability of people, organisations and public institutions to decide for themselves over their data and the digital infrastructure they depend on. Solid supports it by separating data from applications: data lives in a Pod its owner chooses — self-hosted, at their institution or with a provider they trust — and the owner grants and revokes each application's access through open W3C standards. Changing an application or a Pod provider therefore does not mean losing the data or being locked in."
+                }
+              },
+              {
+                "@type": "Question",
                 "name": "Is any part of the symposium open to the public?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. The Solid Open Day on 10 May 2027 is open to all. It includes a student hackathon, an onboarding session for creating your first Solid Pod, and a public evening event on digital sovereignty and privacy held in German."
+                  "text": "Yes. The Solid Open Day on 10 May 2027 is open to all and is dedicated to digital sovereignty. It includes a student hackathon on building sovereign applications with Solid, an onboarding session for creating your first Solid Pod, and a public evening event on digital sovereignty held in German."
                 }
               },
               {
@@ -2020,7 +2048,7 @@
             <hr class="hero-rule top" />
             <h1 property="schema:name"> The 5th Solid Symposium, <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, <time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></h1>
             <hr class="hero-rule bottom" />
-            <a class="hero-openday" href="#programme"><span class="k">Mon 10 May</span> <span>Solid Open Day — open to all</span></a>
+            <a class="hero-openday" href="#programme"><span class="k">Mon 10 May</span> <span>Solid Open Day on Digital Sovereignty — open to all</span></a>
             <a class="hero-cta" href="#about">Information</a> <a class="hero-more" href="#about"><span>Learn more</span><span class="arrow">↓</span></a>
           </div>
         </header>
@@ -2028,10 +2056,10 @@
           <div class="container about-grid">
             <div><span class="eyebrow">Information</span>
               <h2 class="reveal in" property="schema:name">Solid Symposium 2027</h2>
-              <p class="about-lede reveal in"><strong>The Solid Symposium is the annual meeting of the <a href="https://solidproject.org/" rel="noopener" target="_blank">Solid</a> community</strong> — the researchers, developers and practitioners building on Solid, the specification developed in the W3C Solid Community Group that keeps a person's data in a Pod they control, separate from the applications that read and write it. SoSy 27 is the fifth edition: a public Solid Open Day on 10 May 2027, followed by the two-day symposium on 11 and 12 May at SQUARE on the University of St.Gallen campus.</p>
+              <p class="about-lede reveal in"><strong>The Solid Symposium is the annual meeting of the <a href="https://solidproject.org/" rel="noopener" target="_blank">Solid</a> community</strong> — the researchers, developers and practitioners building on Solid, the specification developed in the W3C Solid Community Group that keeps a person's data in a Pod they control, separate from the applications that read and write it. By letting people, organisations and public institutions choose where their data lives and who may use it, Solid turns digital sovereignty from a policy goal into working infrastructure. SoSy 27 is the fifth edition: a public Solid Open Day on digital sovereignty on 10 May 2027, followed by the two-day symposium on 11 and 12 May at SQUARE on the University of St.Gallen campus.</p>
             </div>
             <ul class="facts reveal in" datatype="rdf:HTML" property="schema:description">
-              <li><span class="k">Open day</span><span class="v-val"><time datatype="xsd:date" datetime="2027-05-10">10 May 2027</time> — Solid Open Day <span class="tag now">Open to all</span></span></li>
+              <li><span class="k">Open day</span><span class="v-val"><time datatype="xsd:date" datetime="2027-05-10">10 May 2027</time> — Solid Open Day: Digital Sovereignty <span class="tag now">Open to all</span></span></li>
               <li><span class="k">Symposium</span><span class="v-val"><time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></li>
               <li><span class="k">Location</span><span class="v-val" rel="schema:location" resource="#hsg-square"><span about="#hsg-square" typeof="schema:Place"><span property="schema:name">University of St.Gallen</span>, Switzerland<span rel="schema:address"><span typeof="schema:PostalAddress"><span content="SQUARE, Guisanstrasse 20" property="schema:streetAddress"></span><span content="St.Gallen" property="schema:addressLocality"></span><span content="9010" property="schema:postalCode"></span><span content="CH" property="schema:addressCountry"></span></span></span><span rel="schema:geo"><span typeof="schema:GeoCoordinates"><span content="47.4333296" datatype="xsd:decimal" property="schema:latitude"></span><span content="9.3748173" datatype="xsd:decimal" property="schema:longitude"></span></span></span></span></span></li>
               <li><span class="k">Call for contributions</span><span class="v-val"><a href="#dates">Opens autumn 2026</a></span></li>
@@ -2043,17 +2071,18 @@
             <div class="section-head reveal in"><span class="eyebrow">Programme</span>
               <h2 property="schema:name">Three days in St.Gallen</h2>
               <p property="schema:description">The symposium runs on 11 and 12 May, preceded by the Solid Open
-              Day on 10 May — a public programme for anyone curious about Solid.</p>
+              Day on 10 May — a public programme on digital sovereignty and the part Solid plays in it.</p>
             </div>
             <ol class="days reveal in">
               <li class="featured"><span class="day-k">Mon 10 May</span><span class="tag now">Open to all</span>
-                <h3>Solid Open Day</h3>
-                <p class="day-lede">A public day at SQUARE for anyone curious about Solid — no background in the
+                <h3>Solid Open Day: Digital Sovereignty</h3>
+                <p class="day-lede">A public day at SQUARE on who controls our data — and how Solid puts that
+                control back with people, organisations and public institutions. No background in the
                 specification needed.</p>
                 <ul class="day-items">
-                  <li>Student hackathon</li>
-                  <li>Public evening event on digital sovereignty and privacy, in German</li>
-                  <li>Onboarding session: your first Solid Pod</li>
+                  <li>Student hackathon: building for digital sovereignty with Solid</li>
+                  <li>Public evening event on digital sovereignty, in German</li>
+                  <li>Onboarding session: your first Solid Pod — your data, under your control</li>
                 </ul>
               </li>
               <li><span class="day-k">Tue 11 May</span>
@@ -2109,7 +2138,7 @@
                 <p>The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community
                 conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and
                 combines peer-reviewed papers, workshops and tutorials, posters and demos, a student hackathon
-                and a public open day.</p>
+                and a public open day on digital sovereignty.</p>
               </div>
               <div class="qa-item">
                 <h3>When and where does SoSy 27 take place?</h3>
@@ -2125,10 +2154,20 @@
                 instead of each application holding its own copy.</p>
               </div>
               <div class="qa-item">
+                <h3>How does Solid relate to digital sovereignty?</h3>
+                <p>Digital sovereignty is the ability of people, organisations and public institutions to
+                decide for themselves over their data and the digital infrastructure they depend on. Solid
+                supports it by separating data from applications: data lives in a Pod its owner chooses —
+                self-hosted, at their institution or with a provider they trust — and the owner grants and
+                revokes each application's access through open W3C standards. Changing an application or a
+                Pod provider therefore does not mean losing the data or being locked in.</p>
+              </div>
+              <div class="qa-item">
                 <h3>Is any part of the symposium open to the public?</h3>
-                <p>Yes. The Solid Open Day on 10 May 2027 is open to all. It includes a student hackathon, an
-                onboarding session for creating your first Solid Pod, and a public evening event on digital
-                sovereignty and privacy held in German.</p>
+                <p>Yes. The Solid Open Day on 10 May 2027 is open to all and is dedicated to digital
+                sovereignty. It includes a student hackathon on building sovereign applications with Solid,
+                an onboarding session for creating your first Solid Pod, and a public evening event on digital
+                sovereignty held in German.</p>
               </div>
               <div class="qa-item">
                 <h3>How can I submit a paper, poster or demo?</h3>
@@ -2212,7 +2251,7 @@
         </div>
       </div>
       <div class="container">
-        <p class="foot-updated">Page updated <time datetime="2026-09-04" property="schema:dateModified">4 September 2026</time></p>
+        <p class="foot-updated">Page updated <time datetime="2026-09-23" property="schema:dateModified">23 September 2026</time></p>
         <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
     </footer>

@@ -4,7 +4,7 @@
 > SQUARE on the University of St.Gallen campus in Switzerland on 10–12 May 2027.
 
 - **Official site:** https://sosy2027.org/ (single page; canonical URL, no other pages)
-- **Dates:** Solid Open Day Mon 10 May 2027; symposium Tue 11 – Wed 12 May 2027
+- **Dates:** Solid Open Day on digital sovereignty Mon 10 May 2027; symposium Tue 11 – Wed 12 May 2027
 - **Venue:** SQUARE, University of St.Gallen, Guisanstrasse 20, 9010 St.Gallen, Switzerland
 - **Language:** English (the public evening event on 10 May is in German)
 - **Contact:** fuso@unisg.ch
@@ -22,11 +22,24 @@ datastore — a Pod — that they control, and lets applications read and write 
 data with their permission instead of each application holding its own copy.
 See https://solidproject.org/.
 
+## Solid and digital sovereignty
+
+Digital sovereignty is the ability of people, organisations and public
+institutions to decide for themselves over their data and the digital
+infrastructure they depend on. Solid supports it by separating data from
+applications: data lives in a Pod its owner chooses — self-hosted, at their
+institution or with a provider they trust — and the owner grants and revokes
+each application's access through open W3C standards. Changing an application
+or a Pod provider therefore does not mean losing the data or being locked in.
+Digital sovereignty is the theme of the public Solid Open Day on 10 May 2027.
+
 ## Programme shape
 
-- **Mon 10 May 2027 — Solid Open Day (open to all):** student hackathon; public
-  evening event on digital sovereignty and privacy, in German; onboarding
-  session for creating your first Solid Pod.
+- **Mon 10 May 2027 — Solid Open Day: Digital Sovereignty (open to all):** a
+  public day on who controls our data and how Solid puts that control back with
+  people, organisations and public institutions. Student hackathon on building
+  for digital sovereignty with Solid; public evening event on digital
+  sovereignty, in German; onboarding session for creating your first Solid Pod.
 - **Tue 11 May 2027 — Day One:** keynote; peer-reviewed papers in two parallel
   tracks; poster and demo lightning talks; workshops and tutorials; hackathon
   pitches and award; evening event.
@@ -58,4 +71,4 @@ site. Do not infer them.
 - SoSy 24 — https://events.vito.be/sosy2024
 - SoSy 23 — https://solid.ti.rw.fau.de/public/2023/solid-symposium/
 
-Last updated: 2026-09-04
+Last updated: 2026-09-23
