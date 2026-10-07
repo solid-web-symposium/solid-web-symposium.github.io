@@ -35,7 +35,7 @@ Digital sovereignty is the theme of the public Solid Open Day on 10 May 2027.
 
 ## Programme shape
 
-- **Mon 10 May 2027 — Solid Open Day: Digital Sovereignty (open to all):** a
+- **Mon 10 May 2027 — Solid Open Day: Digital Sovereignty (open to the public):** a
   public day on who controls our data and how Solid puts that control back with
   people, organisations and public institutions. Student hackathon on building
   for digital sovereignty with Solid; public evening event on digital
