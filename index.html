@@ -715,6 +715,25 @@
       color: var(--ink-soft)
     }
 
+    /* sponsors */
+    .sponsors {
+      padding: 84px 0 96px;
+      background: #fff;
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .sponsors-lede {
+      max-width: 640px;
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink-soft)
+    }
+
+    .sponsors-lede a {
+      color: inherit
+    }
+
     .countdown-head {
       display: flex;
       align-items: baseline;
@@ -1525,7 +1544,7 @@
               "height": 1080
             },
             "inLanguage": "en",
-            "dateModified": "2026-09-23",
+            "dateModified": "2026-10-08",
             "speakable": {
               "@type": "SpeakableSpecification",
               "cssSelector": [
@@ -1542,6 +1561,9 @@
             "@type": "Event",
             "@id": "https://sosy2027.org/#event",
             "name": "Solid Symposium 2027",
+            "sponsor": {
+              "@id": "https://www.muze.nl/#organization"
+            },
             "alternateName": [
               "SoSy 27",
               "The 5th Solid Symposium"
@@ -1897,6 +1919,14 @@
             }
           },
           {
+            "@type": "Organization",
+            "@id": "https://www.muze.nl/#organization",
+            "name": "Muze",
+            "description": "Creative web builders from the Netherlands.",
+            "url": "https://www.muze.nl/",
+            "logo": "https://sosy2027.org/assets/muze-logo.png"
+          },
+          {
             "@type": "FAQPage",
             "@id": "https://sosy2027.org/#faq",
             "url": "https://sosy2027.org/#faq",
@@ -2011,6 +2041,7 @@
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://futuresociety.ch/#organization"><span about="https://futuresociety.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Future Society Hub (FuSo)</span> <span content="FuSo" property="schema:alternateName"></span> <span rel="schema:url" resource="https://futuresociety.ch/"></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://ics.unisg.ch/#organization"><span about="https://ics.unisg.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Institute of Computer Science (ICS-HSG)</span> <span content="ICS-HSG" property="schema:alternateName"></span> <span rel="schema:url" resource="https://ics.unisg.ch/"></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://ile.unisg.ch/#organization"><span about="https://ile.unisg.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Institute for Law and Economics (ILE-HSG)</span> <span content="ILE-HSG" property="schema:alternateName"></span> <span rel="schema:url" resource="https://ile.unisg.ch/en/"></span></span></div>
+        <div aria-hidden="true" class="rdfa-meta" rel="schema:sponsor" resource="https://www.muze.nl/#organization"><span about="https://www.muze.nl/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Muze</span> <span rel="schema:url" resource="https://www.muze.nl/"></span></span></div>
         <header class="hero" id="top">
           <div class="hero-bg"><img alt="Aerial view of the SQUARE building on the HSG campus above the city of St. Gallen, with the Säntis massif on the horizon" decoding="async" fetchpriority="high" height="1080" src="assets/square-aerial.jpeg" width="1920" /> <img alt="The SQUARE building at HSG with a meadow of red poppies in front" decoding="async" fetchpriority="low" height="1278" src="assets/square-summer.jpeg" width="1920" /></div>
           <div class="hero-grade"></div>
@@ -2208,6 +2239,12 @@
             <div class="orga-grid reveal in"><a class="orga" href="https://futuresociety.ch/" rel="noopener" target="_blank"><span class="orga-logo"><img alt="Future Society Hub (FuSo) logo" height="595" src="assets/fuso-logo.svg" width="595" /></span> <span><span class="orga-name">Future Society Hub (FuSo)</span><span class="orga-role">Cross-disciplinary research hub fusing computer science and law, University of St.Gallen</span></span></a> <a class="orga" href="https://ics.unisg.ch/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute of Computer Science (ICS-HSG)</span><span class="orga-role">Research institute for computer science at the University of St.Gallen</span></span></a> <a class="orga" href="https://ile.unisg.ch/en/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute for Law and Economics (ILE-HSG)</span><span class="orga-role">Research institute for law and economics at the University of St.Gallen</span></span></a></div>
           </div>
         </section>
+        <section class="sponsors" id="sponsors" inlist="" rel="schema:hasPart" resource="#sponsors">
+          <div class="container"><span class="eyebrow">Thank you to our sponsors</span>
+            <p class="sponsors-lede">SoSy 27 is made possible by the organisations that support it. Interested in joining them? <a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">Write to fuso@unisg.ch</a>.</p>
+            <div class="orga-grid reveal in"><a class="orga" href="https://www.muze.nl/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="Muze logo" height="66" src="assets/muze-logo.png" width="260" /></span> <span><span class="orga-name">Muze</span><span class="orga-role">Creative web builders from the Netherlands</span></span></a></div>
+          </div>
+        </section>
       </article>
     </main>
     <footer>
@@ -2220,7 +2257,7 @@
         </div>
       </div>
       <div class="container">
-        <p class="foot-updated">Page updated <time datetime="2026-09-23" property="schema:dateModified">23 September 2026</time></p>
+        <p class="foot-updated">Page updated <time datetime="2026-10-08" property="schema:dateModified">8 October 2026</time></p>
         <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
     </footer>

@@ -58,11 +58,17 @@ Digital sovereignty is the theme of the public Solid Open Day on 10 May 2027.
 
 Dates beyond the first call are indicative and are fixed as each call is published.
 
+## Sponsors
+
+- Muze (https://www.muze.nl/) — creative web builders from the Netherlands
+
+Organisations interested in sponsoring can write to fuso@unisg.ch.
+
 ## Not yet announced
 
-Keynote speakers, the workshop line-up, sponsors, registration fees and the
-evening-event venue are not yet decided and are deliberately absent from the
-site. Do not infer them.
+Keynote speakers, the workshop line-up, further sponsors, registration fees and
+the evening-event venue are not yet decided and are deliberately absent from
+the site. Do not infer them.
 
 ## Past editions
 
@@ -71,4 +77,4 @@ site. Do not infer them.
 - SoSy 24 — https://events.vito.be/sosy2024
 - SoSy 23 — https://solid.ti.rw.fau.de/public/2023/solid-symposium/
 
-Last updated: 2026-09-23
+Last updated: 2026-10-08
