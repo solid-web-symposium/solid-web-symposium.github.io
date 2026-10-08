@@ -419,6 +419,36 @@
       color: #fff
     }
 
+    .hero-sponsors {
+      margin: 36px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .8);
+      opacity: 0;
+      animation: heroFade .9s ease-out 1.2s forwards
+    }
+
+    .hero-sponsors a {
+      display: block;
+      opacity: .92;
+      transition: opacity .2s ease
+    }
+
+    .hero-sponsors a:hover {
+      opacity: 1
+    }
+
+    .hero-sponsors img {
+      display: block;
+      height: 26px;
+      width: auto
+    }
+
     @media (max-width: 600px) {
       .hero-openday {
         max-width: 100%;
@@ -717,21 +747,71 @@
 
     /* sponsors */
     .sponsors {
-      padding: 84px 0 96px;
+      padding: 120px 0;
       background: #fff;
       border-bottom: 1px solid var(--rule)
     }
 
-    .sponsors-lede {
-      max-width: 640px;
-      margin-top: 12px;
+    .sponsors .section-head p {
+      max-width: 640px
+    }
+
+    .sponsors .section-head a {
+      color: var(--purple-1)
+    }
+
+    .sponsor-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 48px;
+      padding: 44px 48px;
+      background: var(--bg-alt);
+      border: 1px solid var(--rule);
+      border-radius: 18px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease
+    }
+
+    .sponsor-card:hover {
+      border-color: var(--purple-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(30, 20, 70, .08)
+    }
+
+    .sponsor-logo {
+      display: block;
+      width: 260px;
+      max-width: 100%;
+      height: auto
+    }
+
+    .sponsor-name {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.2;
+      color: var(--ink)
+    }
+
+    .sponsor-role {
+      display: block;
+      margin-top: 8px;
       font-size: 16px;
       line-height: 1.6;
       color: var(--ink-soft)
     }
 
-    .sponsors-lede a {
-      color: inherit
+    .sponsor-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--purple-1)
     }
 
     .countdown-head {
@@ -1128,6 +1208,19 @@
       border: 1px solid rgba(255, 255, 255, .5)
     }
 
+    .foot-sponsors {
+      margin: 32px 0 0;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .85)
+    }
+
+    .foot-sponsors a {
+      color: #fff
+    }
+
     .foot-updated {
       margin: 32px 0 0;
       padding-top: 20px;
@@ -1382,7 +1475,8 @@
       .about,
       .signup,
       .programme,
-      .dates {
+      .dates,
+      .sponsors {
         padding: 80px 0
       }
 
@@ -1444,8 +1538,19 @@
       .countdown,
       .programme,
       .faq,
-      .dates {
+      .dates,
+      .sponsors {
         padding: 64px 0
+      }
+
+      .sponsor-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 24px
+      }
+
+      .sponsor-logo {
+        width: 200px
       }
 
       .facts li {
@@ -2050,6 +2155,7 @@
             <h1 property="schema:name"> The 5th Solid Symposium <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, <time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></h1>
             <hr class="hero-rule bottom" />
             <a class="hero-openday" href="#programme"><span class="k">Mon 10 May</span> <span>Solid Open Day on Digital Sovereignty — open to the public</span></a>
+            <div class="hero-sponsors"><span>Sponsored by</span> <a href="https://www.muze.nl/" rel="noopener" target="_blank"><img alt="Muze" height="66" src="assets/muze-logo-white.png" width="260" /></a></div>
             <a class="hero-more" href="#about"><span>Learn more</span><span class="arrow">↓</span></a>
           </div>
         </header>
@@ -2125,6 +2231,16 @@
             call is published. Planning a workshop or an affiliated event? We would like to hear about it before
             the call goes out — write to <a href="mailto:fuso@unisg.ch?subject=SoSy%2027%20workshop%20proposal">fuso@unisg.ch</a>,
             or subscribe below to be told the moment the call opens.</p>
+          </div>
+        </section>
+        <section class="sponsors" id="sponsors" inlist="" rel="schema:hasPart" resource="#sponsors">
+          <div class="container">
+            <div class="section-head reveal in">
+              <h2>Thank you to our sponsors</h2>
+              <p>SoSy 27 is made possible by the organisations that support it. Interested in joining them?
+              Write to <a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">fuso@unisg.ch</a>.</p>
+            </div>
+            <a class="sponsor-card reveal in" href="https://www.muze.nl/" rel="noopener" target="_blank"><img alt="Muze logo" class="sponsor-logo" height="66" src="assets/muze-logo.png" width="260" /> <span><span class="sponsor-name">Muze</span><span class="sponsor-role">Creative web builders from the Netherlands</span><span class="sponsor-link">muze.nl →</span></span></a>
           </div>
         </section>
         <section class="faq" id="faq" inlist="" rel="schema:hasPart" resource="#faq">
@@ -2239,12 +2355,6 @@
             <div class="orga-grid reveal in"><a class="orga" href="https://futuresociety.ch/" rel="noopener" target="_blank"><span class="orga-logo"><img alt="Future Society Hub (FuSo) logo" height="595" src="assets/fuso-logo.svg" width="595" /></span> <span><span class="orga-name">Future Society Hub (FuSo)</span><span class="orga-role">Cross-disciplinary research hub fusing computer science and law, University of St.Gallen</span></span></a> <a class="orga" href="https://ics.unisg.ch/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute of Computer Science (ICS-HSG)</span><span class="orga-role">Research institute for computer science at the University of St.Gallen</span></span></a> <a class="orga" href="https://ile.unisg.ch/en/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute for Law and Economics (ILE-HSG)</span><span class="orga-role">Research institute for law and economics at the University of St.Gallen</span></span></a></div>
           </div>
         </section>
-        <section class="sponsors" id="sponsors" inlist="" rel="schema:hasPart" resource="#sponsors">
-          <div class="container"><span class="eyebrow">Thank you to our sponsors</span>
-            <p class="sponsors-lede">SoSy 27 is made possible by the organisations that support it. Interested in joining them? <a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">Write to fuso@unisg.ch</a>.</p>
-            <div class="orga-grid reveal in"><a class="orga" href="https://www.muze.nl/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="Muze logo" height="66" src="assets/muze-logo.png" width="260" /></span> <span><span class="orga-name">Muze</span><span class="orga-role">Creative web builders from the Netherlands</span></span></a></div>
-          </div>
-        </section>
       </article>
     </main>
     <footer>
@@ -2257,6 +2367,7 @@
         </div>
       </div>
       <div class="container">
+        <p class="foot-sponsors">Sponsored by <a href="https://www.muze.nl/" rel="noopener" target="_blank">Muze</a></p>
         <p class="foot-updated">Page updated <time datetime="2026-10-08" property="schema:dateModified">8 October 2026</time></p>
         <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
