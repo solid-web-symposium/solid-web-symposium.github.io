@@ -1,0 +1,75 @@
+/* Typography and marks for markdown and plain HTML, from the FuSo deck. Plain CSS; needs tokens.css.
+   Components style themselves with StyleX; this file covers what markdown produces. */
+
+.sosy-plain, .sosy-grey, .sosy-accent {
+  background: var(--sosy-bg);
+  color: var(--sosy-fg);
+}
+
+.sosy { font-family: var(--sosy-font); }
+.sosy h1, .sosy h2, .sosy h3 {
+  color: var(--sosy-fg);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+.sosy h1 { font-size: var(--sosy-s-h1); font-weight: 900; letter-spacing: -0.035em; }
+.sosy h2 { font-size: var(--sosy-s-h2); font-weight: 700; letter-spacing: -0.05em; }
+.sosy h3 { font-size: var(--sosy-s-h3); font-weight: 700; letter-spacing: -0.025em; line-height: 1.14; }
+.sosy p, .sosy li { font-size: var(--sosy-s-body); color: var(--sosy-body); line-height: 1.42; }
+.sosy strong { color: var(--sosy-fg); }
+
+/* Highlighted words inside a headline: <span class="hl">working infrastructure</span> */
+.hl {
+  color: var(--sosy-hl);
+  background: var(--sosy-hlbg);
+  padding: 0 var(--sosy-hl-pad);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Eyebrow label above a headline, in sentence case */
+.label {
+  font-size: 0.875em;
+  font-weight: 700;
+  color: var(--sosy-label);
+}
+
+/* Intro under a headline, and the source line at the foot of a slide */
+.lead { font-size: var(--sosy-s-lead) !important; line-height: 1.3; max-width: 76ch; }
+.source { font-size: var(--sosy-s-tiny) !important; color: var(--sosy-quiet) !important; }
+
+/* Text link in accent colour */
+.tl { color: var(--sosy-hl); font-weight: 700; text-underline-offset: .2em; }
+
+/* Numbered list with accent numbers: <ol class="nums"> */
+.nums { list-style: none; padding: 0; counter-reset: q; display: grid; gap: 0.5em; }
+.nums li { counter-increment: q; position: relative; padding-left: 1.4em; }
+.nums li::before {
+  content: counter(q);
+  position: absolute;
+  left: 0;
+  color: var(--sosy-hl);
+  font-weight: 700;
+}
+
+/* Dot list: <ul class="dots">. Add .big for a few short statements set large. */
+.dots { list-style: none; padding: 0; display: grid; gap: .75em; }
+.dots li { position: relative; padding-left: 1.4em; }
+.dots li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .45em;
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
+  background: var(--sosy-hl);
+}
+.dots.big { gap: 1em; }
+.dots.big li {
+  font-size: var(--sosy-s-h3);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.25;
+  color: var(--sosy-fg);
+}

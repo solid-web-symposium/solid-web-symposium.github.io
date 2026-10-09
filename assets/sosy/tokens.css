@@ -1,0 +1,88 @@
+/* SoSy 27 design tokens. Plain CSS, shared by slides and websites, the source of truth for StyleX
+   (tokens.stylex.ts only points at these variables).
+   System follows the FuSo deck (inspiration.html): every surface defines the same roles,
+   so content reads correctly on plain, grey or accent backgrounds in light and dark mode.
+   Colours come from solidproject.org (purple #7c4dff, navy #202542) in place of FuSo green.
+   Every colour is solid: no rgba, no opacity, no gradients. Tints are pre-mixed onto their surface. */
+
+:root {
+  --sosy-purple: #7c4dff;        /* 4.8:1 on white, white text 4.8:1 on it */
+  --sosy-purple-strong: #6d3dee; /* accent text on grey, hover */
+  --sosy-purple-deep: #663fd1;   /* call-to-action strip inside a purple panel */
+  --sosy-purple-light: #9e7bff;  /* accent text in dark mode, 6:1 on #121212 */
+  --sosy-purple-mist: #a382ff;   /* lines on the purple title field */
+  --sosy-navy: #202542;
+
+  --sosy-font: 'Inter', system-ui, sans-serif;
+  --sosy-radius: 5px; /* minimal rounding */
+  --sosy-max: 1280px;
+
+  /* The spacing unit --sosy-u and the type scale --sosy-s-* are StyleX variables now:
+     `scale` in tokens.stylex.ts, with a theme per slide and canvas format in components/styles.ts. */
+}
+
+/* Surfaces: put .sosy-plain, .sosy-grey or .sosy-accent on any section or slide. */
+:root, .sosy-plain {
+  --sosy-bg: #ffffff; --sosy-fg: var(--sosy-navy); --sosy-body: #333333; --sosy-quiet: #666666;
+  --sosy-divider: #dddddd; --sosy-line: var(--sosy-navy);
+  --sosy-hl: var(--sosy-purple); --sosy-hlbg: transparent; --sosy-hl-pad: 0;
+  --sosy-label: var(--sosy-purple); /* labels and big figures: accent text with no background */
+  --sosy-panel: #f4f4f4; --sosy-panel-fg: var(--sosy-navy); --sosy-panel-body: #333333; --sosy-panel-quiet: #666666;
+  --sosy-disc: var(--sosy-purple); --sosy-icon: #ffffff;
+  --sosy-inv: var(--sosy-purple); --sosy-inv-fg: #ffffff; --sosy-inv-line: var(--sosy-purple);
+  --sosy-band: var(--sosy-purple); --sosy-band-fg: #ffffff;
+  --sosy-wm: #e7dfff;
+  --sosy-icon-body: var(--sosy-purple); --sosy-icon-fold: #4f2bbf; /* icons: body, fold and dot shade */
+}
+.sosy-grey {
+  --sosy-bg: #f4f4f4; --sosy-fg: var(--sosy-navy); --sosy-body: #333333; --sosy-quiet: #666666;
+  --sosy-divider: #dddddd; --sosy-line: var(--sosy-navy);
+  --sosy-hl: var(--sosy-purple-strong); --sosy-hlbg: transparent; --sosy-hl-pad: 0;
+  --sosy-label: var(--sosy-purple-strong);
+  --sosy-panel: #ffffff; --sosy-panel-fg: var(--sosy-navy); --sosy-panel-body: #333333; --sosy-panel-quiet: #666666;
+  --sosy-disc: var(--sosy-purple); --sosy-icon: #ffffff;
+  --sosy-inv: var(--sosy-purple); --sosy-inv-fg: #ffffff; --sosy-inv-line: var(--sosy-purple);
+  --sosy-band: var(--sosy-purple); --sosy-band-fg: #ffffff;
+  --sosy-wm: #ded6f6;
+  --sosy-icon-body: var(--sosy-purple); --sosy-icon-fold: #4f2bbf;
+}
+.sosy-accent {
+  --sosy-bg: var(--sosy-purple); --sosy-fg: #ffffff; --sosy-body: #ffffff; --sosy-quiet: #ffffff;
+  --sosy-divider: #b9a2ff; --sosy-line: #ffffff;
+  --sosy-hl: var(--sosy-purple); --sosy-hlbg: #ffffff; --sosy-hl-pad: .12em;
+  --sosy-label: #ffffff;
+  --sosy-panel: #ffffff; --sosy-panel-fg: var(--sosy-navy); --sosy-panel-body: #333333; --sosy-panel-quiet: #666666;
+  --sosy-disc: #ffffff; --sosy-icon: var(--sosy-purple);
+  --sosy-inv: var(--sosy-purple); --sosy-inv-fg: #ffffff; --sosy-inv-line: #ffffff;
+  --sosy-band: #ffffff; --sosy-band-fg: var(--sosy-purple);
+  --sosy-wm: #9b78ff;
+  --sosy-icon-body: #ffffff; --sosy-icon-fold: #c6c6c6;
+}
+
+/* Dark mode: websites set data-mode="dark" on <html>, Slidev sets class="dark". */
+:is([data-mode="dark"], .dark), :is([data-mode="dark"], .dark) .sosy-plain {
+  --sosy-bg: #121212; --sosy-fg: #ededed; --sosy-body: #dadada; --sosy-quiet: #bdbdbd;
+  --sosy-divider: #2e2e2e; --sosy-line: #ededed;
+  --sosy-hl: var(--sosy-purple-light); --sosy-label: var(--sosy-purple-light);
+  --sosy-panel: #1a1a1a; --sosy-panel-fg: #ededed; --sosy-panel-body: #dadada; --sosy-panel-quiet: #bdbdbd;
+  --sosy-wm: #4c3294;
+  --sosy-icon-body: var(--sosy-purple-light); --sosy-icon-fold: var(--sosy-purple-strong);
+}
+:is([data-mode="dark"], .dark) .sosy-grey {
+  --sosy-bg: #1a1a1a; --sosy-fg: #ededed; --sosy-body: #dadada; --sosy-quiet: #bdbdbd;
+  --sosy-divider: #2e2e2e; --sosy-line: #ededed;
+  --sosy-hl: var(--sosy-purple-light); --sosy-label: var(--sosy-purple-light);
+  --sosy-panel: #121212; --sosy-panel-fg: #ededed; --sosy-panel-body: #dadada; --sosy-panel-quiet: #bdbdbd;
+  --sosy-wm: #503698;
+  --sosy-icon-body: var(--sosy-purple-light); --sosy-icon-fold: var(--sosy-purple-strong);
+}
+:is([data-mode="dark"], .dark) .sosy-accent {
+  --sosy-panel: #121212; --sosy-panel-fg: #ededed; --sosy-panel-body: #dadada; --sosy-panel-quiet: #bdbdbd;
+  --sosy-band: #121212; --sosy-band-fg: #ededed;
+}
+
+/* Icon colour variants, on any element around an icon: violet, white (the Solid logo's light and grey)
+   and grey/black for print and monochrome use. */
+.sosy-icon-violet { --sosy-icon-body: var(--sosy-purple); --sosy-icon-fold: #4f2bbf; }
+.sosy-icon-white { --sosy-icon-body: #ffffff; --sosy-icon-fold: #c6c6c6; }
+.sosy-icon-mono { --sosy-icon-body: #6b6b6b; --sosy-icon-fold: #111111; }
