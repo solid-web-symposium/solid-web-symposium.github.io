@@ -205,6 +205,43 @@
       50% { transform: scale(1) }
     }
 
+    .hero.paused .hero-bg img { animation-play-state: paused }
+
+    .hero-pause {
+      position: absolute;
+      right: var(--sosy-u);
+      bottom: var(--sosy-u);
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--sosy-bg);
+      color: var(--sosy-fg);
+      cursor: pointer
+    }
+
+    /* two bars while playing, a triangle once paused */
+    .hero-pause::before {
+      content: "";
+      box-sizing: border-box;
+      width: 10px;
+      height: 12px;
+      border: solid currentColor;
+      border-width: 0 3px
+    }
+
+    .hero-pause[aria-pressed="true"]::before {
+      width: 0;
+      height: 0;
+      margin-left: 3px;
+      border-width: 6px 0 6px 10px;
+      border-color: transparent transparent transparent currentColor
+    }
+
     .hero .container { position: relative; z-index: 1; width: 100% }
 
     .hero-panel {
@@ -1136,6 +1173,7 @@
         <div aria-hidden="true" class="rdfa-meta" rel="schema:sponsor" resource="https://www.muze.nl/#organization"><span about="https://www.muze.nl/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Muze</span> <span rel="schema:url" resource="https://www.muze.nl/"></span></span></div>
         <header class="hero" id="top">
           <div class="hero-bg"><img alt="Aerial view of the SQUARE building on the HSG campus above the city of St. Gallen, with the Säntis massif on the horizon" decoding="async" fetchpriority="high" height="1080" src="assets/square-aerial.jpeg" width="1920" /> <img alt="The SQUARE building at HSG with a meadow of red poppies in front" decoding="async" fetchpriority="low" height="1278" src="assets/square-summer.jpeg" width="1920" /></div>
+          <button aria-label="Pause background animation" aria-pressed="false" class="hero-pause" onclick="this.setAttribute('aria-pressed', this.closest('.hero').classList.toggle('paused'))" type="button"></button>
           <div class="container">
             <div class="hero-panel sosy-plain">
               <h1 property="schema:name">The 5th <span class="hl">Solid Symposium</span> <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, <time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></h1>
