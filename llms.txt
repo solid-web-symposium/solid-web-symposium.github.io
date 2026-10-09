@@ -49,7 +49,7 @@ Digital sovereignty is the theme of the public Solid Open Day on 10 May 2027.
 
 ## Key dates
 
-- **Sep 2026** — call for workshop proposals opens
+- **Oct 2026** — call for workshop proposals opens
 - **Autumn 2026** — call for contributions opens (papers, posters, demos)
 - **Feb 2027** — submission deadline
 - **Mar 2027** — notifications to authors
