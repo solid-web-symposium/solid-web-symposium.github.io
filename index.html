@@ -71,7 +71,7 @@
     html, body { margin: 0; padding: 0 }
 
     /* keep anchor targets clear of the sticky nav */
-    html { scroll-padding-top: 72px }
+    html { scroll-padding-top: 72px; scroll-behavior: smooth }
 
     body {
       background: var(--sosy-bg);
@@ -87,7 +87,7 @@
 
     .sosy h2, .sosy h3, .sosy p { margin: 0 }
 
-    a:focus-visible, button:focus-visible {
+    a:focus-visible, button:focus-visible, summary:focus-visible {
       outline: 2px solid var(--sosy-label);
       outline-offset: 2px
     }
@@ -175,6 +175,81 @@
     }
 
     .nav-cta:hover { background: var(--sosy-purple-strong) }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: calc(.5 * var(--sosy-u));
+      /* right-aligned, stopping 160px short of the window edge to clear the corner button */
+      margin-left: auto;
+      margin-right: max(0px, 160px - 5 * var(--sosy-u) - max(0px, (100vw - var(--sosy-max)) / 2));
+      font-size: var(--sosy-s-small);
+      font-weight: 700
+    }
+
+    .nav-menu a, .nav-menu summary {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--sosy-radius);
+      color: var(--sosy-fg);
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer
+    }
+
+    .nav-menu a:hover, .nav-menu summary:hover { background: var(--sosy-panel) }
+    .nav-menu summary { list-style: none }
+    .nav-menu summary::-webkit-details-marker { display: none }
+    .nav-menu details { position: relative }
+
+    /* chevron drawn with the same 2px stroke as the menu toggle */
+    .nav-menu summary::after {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-left: 8px;
+      border: solid currentColor;
+      border-width: 0 2px 2px 0;
+      transform: translateY(-3px) rotate(45deg);
+      transition: transform .2s ease
+    }
+
+    .nav-menu details[open] summary::after { transform: rotate(225deg) }
+
+    .nav-menu details::details-content {
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity .2s ease, transform .2s ease, block-size .2s ease, content-visibility .2s allow-discrete
+    }
+
+    .nav-menu details[open]::details-content { opacity: 1; transform: none }
+
+    .nav-sub {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      min-width: 160px;
+      padding: 6px;
+      background: var(--sosy-bg);
+      border: 1px solid var(--sosy-divider);
+      border-radius: var(--sosy-radius)
+    }
+
+    .nav-toggle {
+      display: none;
+      margin-left: auto;
+      padding: 8px;
+      border: 0;
+      border-radius: var(--sosy-radius);
+      background: none;
+      color: var(--sosy-fg);
+      cursor: pointer
+    }
+
+    .nav-toggle svg { display: block }
 
     /* hero: full-bleed photo with the text on a solid panel, as in the photo layout */
     .hero {
@@ -693,6 +768,46 @@
       .hero-bg img { animation: heroCycle 12s linear infinite; transform: none }
       .hero-bg img+img { animation-delay: -6s }
       .hero-panel, .cd-cell .tick { animation: none }
+      html { scroll-behavior: auto }
+      .nav-menu summary::after, .nav-menu details::details-content { transition: none }
+    }
+
+    /* below this the menu no longer fits beside the corner button, so it folds behind the toggle */
+    @media (max-width: 1000px) {
+      .nav-toggle { display: block }
+      .nav-cta { position: static; margin-left: var(--sosy-u); white-space: nowrap }
+
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin: 0;
+        padding: var(--sosy-u) calc(2.5 * var(--sosy-u)) calc(2 * var(--sosy-u));
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        background: var(--sosy-bg);
+        border-bottom: 1px solid var(--sosy-divider)
+      }
+
+      .nav-toggle[aria-expanded="true"] + .nav-menu { display: flex }
+      .nav-menu a, .nav-menu summary { padding: 12px }
+      .nav-sub { position: static; padding: 0 0 0 calc(2 * var(--sosy-u)); border: 0 }
+
+      /* in the folded menu the sub links also grow in height, where the browser can animate to auto */
+      .nav-menu { interpolate-size: allow-keywords }
+      .nav-menu details::details-content { block-size: 0; overflow: clip }
+      .nav-menu details[open]::details-content { block-size: auto }
+    }
+
+    /* the narrowest phones: tighten the button so the brand stays on one line */
+    @media (max-width: 360px) {
+      .brand { white-space: nowrap }
+      .nav-cta { margin-left: 0; padding: 10px }
     }
 
     @media (max-width: 900px) {
@@ -1247,8 +1362,31 @@
   </head>
   <body about="" class="sosy" id="home" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# rdfa: http://www.w3.org/ns/rdfa# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ pimspace: http://www.w3.org/ns/pim/space# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# mem: http://mementoweb.org/ns# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# bibo: http://purl.org/ontology/bibo/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# earl: http://www.w3.org/ns/earl# spec: http://www.w3.org/ns/spec# odrl: http://www.w3.org/ns/odrl/2/ dio: https://w3id.org/dio# rel: https://www.w3.org/ns/iana/link-relations/relation#" typeof="schema:CreativeWork schema:Event prov:Entity">
     <nav class="nav">
-      <div class="container nav-inner"><a class="brand" href="#top"><span class="brand-mark"><img alt="Solid logo" src="assets/solid-logo.svg" /></span>SoSy 27</a> <a class="nav-cta" href="#signup">Stay updated</a></div>
+      <div class="container nav-inner"><a class="brand" href="#top"><span class="brand-mark"><img alt="Solid logo" src="assets/solid-logo.svg" /></span>SoSy 27</a> <button aria-controls="nav-menu" aria-expanded="false" aria-label="Menu" class="nav-toggle" type="button"><svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" /></svg></button>
+        <div class="nav-menu" id="nav-menu">
+          <details name="nav"><summary>About</summary>
+            <div class="nav-sub"><a href="#about">The symposium</a> <a href="#organisers">Organisers</a></div>
+          </details>
+          <details name="nav"><summary>Call for Participation</summary>
+            <div class="nav-sub"><a href="#call-for-sessions">Call for Sessions</a> <a href="#dates">Key dates</a></div>
+          </details>
+          <a href="#programme">Programme</a> <a href="#sponsors">Sponsors</a> <a href="#faq">FAQ</a>
+        </div>
+        <a class="nav-cta" href="#signup">Stay updated</a></div>
     </nav>
+    <script>
+      {
+        const toggle = document.querySelector('.nav-toggle')
+        const close = () => {
+          toggle.setAttribute('aria-expanded', 'false')
+          document.querySelectorAll('.nav-menu details[open]').forEach(d => d.open = false)
+        }
+        toggle.addEventListener('click', () => toggle.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded') !== 'true'))
+        // any click that is not opening something closes the menu: a link, the page, the brand
+        addEventListener('click', e => { if (!e.target.closest('.nav-toggle, .nav-menu summary')) close() })
+        addEventListener('keydown', e => { if (e.key === 'Escape') close() })
+      }
+    </script>
     <main>
       <article about="" typeof="schema:Article schema:Event">
         <div aria-hidden="true" class="rdfa-meta" rel="schema:superEvent" resource="#solid-symposium-series"><span about="#solid-symposium-series" typeof="schema:Event"><span property="schema:name">Solid Symposium</span> <span rel="schema:subEvent" resource="https://sosy2026.eu/"></span> <span rel="schema:subEvent" resource="https://sosy2025.eu/"></span> <span rel="schema:subEvent" resource="https://events.vito.be/sosy2024"></span> <span rel="schema:subEvent" resource="https://solid.ti.rw.fau.de/public/2023/solid-symposium/"></span></span></div>
