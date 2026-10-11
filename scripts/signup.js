@@ -412,9 +412,10 @@
   function renderEmailSuccess(pane, email) {
     pane.innerHTML = `
       <h3>You're on the list</h3>
-      <p>We've recorded <code>${email}</code> and will email you about Solid
+      <p>We've recorded <code data-email></code> and will email you about Solid
         Symposium 2027. No Solid Pod was created for you.</p>
     `;
+    pane.querySelector('[data-email]').textContent = email;
   }
 
   function showChooser(root) {
@@ -465,12 +466,6 @@
         else if (path === 'none') renderNonePane(root);
         else if (path === 'email') renderEmailPane(root);
       });
-    });
-
-    // Legacy form (if still present) becomes a no-op since the chooser
-    // replaces it. Just disable the submit so it can't accidentally POST.
-    document.querySelectorAll('form.signup-form').forEach(form => {
-      form.style.display = 'none';
     });
 
     startCountdown();

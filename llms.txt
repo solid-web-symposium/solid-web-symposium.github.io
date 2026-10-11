@@ -41,22 +41,51 @@ Digital sovereignty is the theme of the public Solid Open Day on 10 May 2027.
   for digital sovereignty with Solid; public evening event on digital
   sovereignty, in German; onboarding session for creating your first Solid Pod.
 - **Tue 11 May 2027 — Day One:** keynote; peer-reviewed papers in two parallel
-  tracks; poster and demo lightning talks; workshops and tutorials; hackathon
+  tracks; poster and demo lightning talks; community sessions; hackathon
   pitches and award; evening event.
 - **Wed 12 May 2027 — Day Two:** keynote; peer-reviewed papers in two parallel
-  tracks; workshops and tutorials; closing, awards and handover to the next
+  tracks; community sessions; closing, awards and handover to the next
   edition.
+
+## Call for Sessions (open)
+
+The Solid community is invited to propose sessions for 11 or 12 May 2027:
+https://sosy2027.org/#call-for-sessions
+
+- **Format:** one or two 75-minute slots (more on request), in any form —
+  soliciting papers, talks, panel discussions, demos, tutorials, hands-on
+  workshops, hackathons. Session organisers choose the theme, confirm speakers
+  and gather contributions; the symposium organisers provide the room, coffee
+  breaks, lunch, a social event and a programme of keynotes.
+- **Proposal:** max. three pages, any reasonable format, by email to
+  fuso@unisg.ch. Include title and abstract; (co-)organisers and affiliations;
+  prospective PC members if any; description with preliminary agenda and
+  potential speakers, and a preference for 11 or 12 May; relation to Solid,
+  intended audience, suitability for newcomers and expected attendance; any
+  non-standard equipment needs.
+- **Deadline:** 25 November 2026 (AoE). Notifications on a rolling basis, by
+  2 December 2026 at the latest.
+- **Accepted sessions** set up their own landing page, linked from sosy2027.org.
+- **Topic suggestions:** Solid architecture; Solid and its users; agents on and
+  about Solid; legal aspects (data protection, governance); authoring tools;
+  open-source Solid projects; applications (industry, research, public
+  entities); business cases; medical personal data; self-publishing; data
+  spaces; digital wallets; security and privacy; evolving Web standards behind
+  Solid; any other Solid topic.
 
 ## Key dates
 
-- **Oct 2026** — call for workshop proposals opens
+- **Open now** — Call for Sessions
+- **25 Nov 2026** — session proposal deadline (AoE)
+- **2 Dec 2026** — session notifications, at the latest
 - **Autumn 2026** — call for contributions opens (papers, posters, demos)
 - **Feb 2027** — submission deadline
 - **Mar 2027** — notifications to authors
 - **Mar 2027** — registration opens
 - **10–12 May 2027** — Solid Symposium 2027
 
-Dates beyond the first call are indicative and are fixed as each call is published.
+The Call for Sessions dates are fixed; the remaining dates are indicative and
+are fixed as each call is published.
 
 ## Sponsors
 
@@ -66,7 +95,8 @@ Organisations interested in sponsoring can write to fuso@unisg.ch.
 
 ## Not yet announced
 
-Keynote speakers, the workshop line-up, further sponsors, registration fees and
+Keynote speakers, the session line-up, further sponsors, the registration fee
+amount (participants will pay a fee covering food and beverages) and
 the evening-event venue are not yet decided and are deliberately absent from
 the site. Do not infer them.
 
@@ -77,4 +107,4 @@ the site. Do not infer them.
 - SoSy 24 — https://events.vito.be/sosy2024
 - SoSy 23 — https://solid.ti.rw.fau.de/public/2023/solid-symposium/
 
-Last updated: 2026-10-08
+Last updated: 2026-10-11

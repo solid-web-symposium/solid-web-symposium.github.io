@@ -70,6 +70,9 @@
 
     html, body { margin: 0; padding: 0 }
 
+    /* keep anchor targets clear of the sticky nav */
+    html { scroll-padding-top: 72px }
+
     body {
       background: var(--sosy-bg);
       color: var(--sosy-body);
@@ -99,7 +102,7 @@
 
     .section-head { display: grid; gap: calc(1.5 * var(--sosy-u)); margin-bottom: calc(4 * var(--sosy-u)) }
     .section-head p { max-width: 64ch }
-    .section-head a, .about-lede a, .dates-note a, .qa-item a { color: var(--sosy-hl); font-weight: 700; text-underline-offset: .2em }
+    .section-head a, .about-lede a, .dates-note a, .qa-item a, .facts a, .call-cta-note a { color: var(--sosy-hl); font-weight: 700; text-underline-offset: .2em }
 
     /* labels: sentence case, bold, in the label colour */
     .eyebrow, .day-k, .facts .k, .cd-cell .lbl {
@@ -121,6 +124,9 @@
     }
 
     .tag.now { background: var(--sosy-purple); color: #fff }
+
+    /* a tag inside a headline must not inherit its tight tracking */
+    .section-head h2 .tag { letter-spacing: 0; vertical-align: .5em }
 
     /* nav */
     .nav {
@@ -382,6 +388,77 @@
 
     .sosy .dates-note { margin-top: calc(2.5 * var(--sosy-u)) }
 
+    /* call for sessions: the call beside a panel with the essentials, as the open-day link */
+    .call-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: calc(6 * var(--sosy-u));
+      align-items: start
+    }
+
+    .call-body { display: grid; gap: calc(1.6 * var(--sosy-u)) }
+    .sosy .call-body h3, .sosy .call-topics h3 { margin-top: calc(2 * var(--sosy-u)) }
+    .sosy .call-note { font-size: var(--sosy-s-small); font-weight: 700; color: var(--sosy-label) }
+    .call-body .dots { margin: 0 }
+
+    .call-aside {
+      position: sticky;
+      top: calc(72px + 2 * var(--sosy-u));
+      padding: calc(2.6 * var(--sosy-u));
+      border-left: 4px solid var(--sosy-label);
+      border-radius: var(--sosy-radius);
+      background: var(--sosy-panel);
+      color: var(--sosy-panel-fg)
+    }
+
+    .call-aside dl { margin: 0 }
+    .call-aside dl div { padding: calc(1.2 * var(--sosy-u)) 0; border-bottom: 1px solid var(--sosy-divider) }
+    .call-aside dl div:first-child { padding-top: 0 }
+    .call-aside dt { font-size: var(--sosy-s-small); font-weight: 700; color: var(--sosy-label) }
+
+    .call-aside dd {
+      margin: 2px 0 0;
+      font-size: var(--sosy-s-text);
+      font-weight: 700;
+      letter-spacing: -.015em;
+      line-height: 1.3;
+      color: var(--sosy-panel-fg)
+    }
+
+    .call-aside dd small { display: block; font-size: var(--sosy-s-small); font-weight: 400; letter-spacing: 0; color: var(--sosy-panel-quiet) }
+    .call-aside abbr { text-decoration: none }
+
+    .call-cta {
+      display: block;
+      margin-top: calc(2 * var(--sosy-u));
+      padding: 14px 18px;
+      border-radius: var(--sosy-radius);
+      background: var(--sosy-purple);
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: background .2s ease
+    }
+
+    .call-cta:hover { background: var(--sosy-purple-strong) }
+    .sosy .call-cta-note { margin-top: var(--sosy-u); font-size: var(--sosy-s-small); text-align: center; color: var(--sosy-panel-quiet) }
+
+    .call-topics { margin-top: calc(4 * var(--sosy-u)) }
+    .topics { list-style: none; margin: calc(1.6 * var(--sosy-u)) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sosy-u) }
+
+    .sosy .topics li {
+      padding: .45em .9em;
+      border-radius: var(--sosy-radius);
+      background: var(--sosy-panel);
+      color: var(--sosy-panel-fg);
+      font-size: var(--sosy-s-small);
+      font-weight: 700;
+      line-height: 1.3
+    }
+
+    .sosy .topics li.open { background: var(--sosy-bg); box-shadow: inset 0 0 0 2px var(--sosy-label); color: var(--sosy-label) }
+
     /* countdown */
     .countdown-head {
       display: flex;
@@ -577,7 +654,8 @@
     .rdfa-meta { display: none }
 
     .past-editions { position: relative; display: inline-block }
-    .past-trigger { cursor: pointer }
+    .past-trigger { appearance: none; border: 0; padding: 0; background: none; font: inherit; font-weight: 700; color: var(--sosy-fg); cursor: pointer }
+    .past-trigger:hover { color: var(--sosy-hl) }
 
     /* invisible bridge so the cursor can travel from trigger to menu without losing hover */
     .past-editions::after { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 14px }
@@ -615,7 +693,9 @@
     @media (max-width: 900px) {
       .container { padding: 0 calc(2.5 * var(--sosy-u)) }
       section { padding: calc(8 * var(--sosy-u)) 0 }
-      .orga-grid, .days, .qa, .about-grid { grid-template-columns: 1fr }
+      .orga-grid, .days, .qa, .about-grid, .call-grid { grid-template-columns: 1fr }
+      .call-grid { gap: calc(4 * var(--sosy-u)) }
+      .call-aside { position: static }
       .about-grid { gap: calc(4 * var(--sosy-u)) }
       .cd-grid { grid-template-columns: repeat(2, 1fr); gap: calc(2 * var(--sosy-u)) }
       .facts li { grid-template-columns: 140px 1fr }
@@ -672,7 +752,7 @@
               "height": 1080
             },
             "inLanguage": "en",
-            "dateModified": "2026-10-08",
+            "dateModified": "2026-10-11",
             "speakable": {
               "@type": "SpeakableSpecification",
               "cssSelector": [
@@ -696,7 +776,7 @@
               "SoSy 27",
               "The 5th Solid Symposium"
             ],
-            "description": "The 5th Solid Symposium (SoSy 27) is the annual meeting of the Solid community, held at SQUARE on the University of St.Gallen campus in Switzerland on 11 and 12 May 2027, preceded by the public Solid Open Day on digital sovereignty on 10 May. The programme comprises peer-reviewed papers in two parallel tracks, keynotes, workshops and tutorials, posters and demos, and a student hackathon.",
+            "description": "The 5th Solid Symposium (SoSy 27) is the annual meeting of the Solid community, held at SQUARE on the University of St.Gallen campus in Switzerland on 11 and 12 May 2027, preceded by the public Solid Open Day on digital sovereignty on 10 May. The programme comprises peer-reviewed papers in two parallel tracks, keynotes, community sessions, posters and demos, and a student hackathon.",
             "startDate": "2027-05-11",
             "endDate": "2027-05-12",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -828,7 +908,7 @@
               "@id": "https://sosy2027.org/#orga-committee"
             },
             "inLanguage": "en",
-            "description": "Keynote, peer-reviewed papers in two parallel tracks, poster and demo lightning talks, workshops and tutorials, hackathon pitches and award, and an evening event.",
+            "description": "Keynote, peer-reviewed papers in two parallel tracks, poster and demo lightning talks, community sessions, hackathon pitches and award, and an evening event.",
             "subEvent": [
               {
                 "@type": "Event",
@@ -859,7 +939,7 @@
               },
               {
                 "@type": "Event",
-                "name": "Workshops and tutorials",
+                "name": "Community Sessions",
                 "startDate": "2027-05-11",
                 "endDate": "2027-05-11",
                 "location": {
@@ -901,7 +981,7 @@
               "@id": "https://sosy2027.org/#orga-committee"
             },
             "inLanguage": "en",
-            "description": "Keynote, peer-reviewed papers in two parallel tracks, workshops and tutorials, and the closing session with awards and the handover to the next edition.",
+            "description": "Keynote, peer-reviewed papers in two parallel tracks, community sessions, and the closing session with awards and the handover to the next edition.",
             "subEvent": [
               {
                 "@type": "Event",
@@ -923,7 +1003,7 @@
               },
               {
                 "@type": "Event",
-                "name": "Workshops and tutorials",
+                "name": "Community Sessions",
                 "startDate": "2027-05-12",
                 "endDate": "2027-05-12",
                 "location": {
@@ -1067,7 +1147,7 @@
                 "name": "What is the Solid Symposium 2027?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and combines peer-reviewed papers, workshops and tutorials, posters and demos, a student hackathon and a public open day on digital sovereignty."
+                  "text": "The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and combines peer-reviewed papers, community sessions, posters and demos, a student hackathon and a public open day on digital sovereignty."
                 }
               },
               {
@@ -1112,10 +1192,10 @@
               },
               {
                 "@type": "Question",
-                "name": "How do I propose a workshop or an affiliated event?",
+                "name": "How do I propose a session or workshop?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The call for workshop proposals opens in October 2026. If you are planning a workshop or an affiliated event, the organisers would like to hear about it before the call goes out — write to fuso@unisg.ch."
+                  "text": "The Call for Sessions is open until 25 November 2026 (AoE). Sessions fill one or two 75-minute slots on 11 or 12 May 2027 and can take any form — paper sessions, talks, panels, tutorials or hands-on workshops. Email a proposal of up to three pages to fuso@unisg.ch; notifications are sent on a rolling basis, by 2 December 2026 at the latest."
                 }
               },
               {
@@ -1178,6 +1258,7 @@
             <div class="hero-panel sosy-plain">
               <h1 property="schema:name">The 5th <span class="hl">Solid Symposium</span> <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, <time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></h1>
               <a class="hero-openday" href="#programme"><span class="k">Mon 10 May</span> <span>Solid Open Day on Digital Sovereignty — open to the public</span></a>
+              <a class="hero-openday" href="#call-for-sessions"><span class="k">Until 25 Nov</span> <span>Call for Sessions — propose a workshop, tutorial or panel</span></a>
               <div class="hero-sponsors"><span>Sponsored by</span> <a href="https://www.muze.nl/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/muze-logo-white.png" /><img alt="Muze" height="66" src="assets/muze-logo.png" width="260" /></picture></a></div>
             </div>
           </div>
@@ -1229,7 +1310,7 @@
                   <li>Keynote</li>
                   <li>Peer-reviewed papers, two parallel tracks</li>
                   <li>Poster and demo lightning talks</li>
-                  <li>Workshops and tutorials</li>
+                  <li><a href="#call-for-sessions">Community Sessions</a></li>
                   <li>Hackathon pitches and award</li>
                   <li>Evening event</li>
                 </ul>
@@ -1243,33 +1324,109 @@
                 <ul class="day-items">
                   <li>Keynote</li>
                   <li>Peer-reviewed papers, two parallel tracks</li>
-                  <li>Workshops and tutorials</li>
+                  <li><a href="#call-for-sessions">Community Sessions</a></li>
                   <li>Closing, awards and handover to the next edition</li>
                 </ul>
               </li>
             </ol>
           </div>
         </section>
-        <section class="dates" id="dates" inlist="" rel="schema:hasPart" resource="#dates">
+        <section class="call" id="call-for-sessions" inlist="" rel="schema:hasPart" resource="#call-for-sessions">
+          <div class="container">
+            <div class="section-head reveal in">
+              <h2 property="schema:name">Call for <span class="hl">Sessions</span> <span class="tag now">Open until 25 Nov 2026</span></h2>
+              <p class="lead" property="schema:description">Help shape the programme of SoSy 27. The core of the Solid
+              Symposium has always been the Solid community proposing engaging, professional sessions — we invite
+              you to propose one for 11 or 12 May 2027.</p>
+            </div>
+            <div class="call-grid">
+              <div class="call-body reveal in">
+                <p>SoSy 27 is a platform for the state of the art of Solid, its mission and its technology: visions
+                for the future, the latest research insights, and updates on tools, success stories and current
+                developments. It aims to offer something for everyone — Solid newcomers, researchers, open-source
+                developers, industry and society as a whole.</p>
+                <p>As a session organiser you choose the theme and the format: soliciting papers, talks, panel
+                discussions, demos, tutorials, hands-on workshops, or anything else that serves your goals. You
+                confirm speakers, gather contributions such as papers or presentations, and work with the
+                organising team on whatever makes your session a success. We will support you.</p>
+                <h3>What to include in your proposal</h3>
+                <p class="call-note">Max. three pages, any reasonable format</p>
+                <ul class="dots">
+                  <li>The title and a short abstract of the session, to be published online.</li>
+                  <li>The (co-)organisers and their affiliations, to be published online, plus contact details
+                  shared only with the symposium organisers for practical arrangements.</li>
+                  <li>Names of prospective programme committee members, if your session has one.</li>
+                  <li>A description of the session with a preliminary agenda and, where appropriate, potential
+                  speakers — and whether you prefer to run it on 11 or 12 May.</li>
+                  <li>How the session relates to Solid and what attendees will gain from it; the audience it suits
+                  best (industry, research, policy, …); whether it is particularly suited to Solid newcomers; and
+                  how many attendees you expect.</li>
+                  <li>Any non-standard equipment, or anything else you would like to tell us. Feel free to be
+                  creative — a hands-on workshop, a double-length session or a hackathon are all welcome.</li>
+                </ul>
+                <h3>What the symposium provides</h3>
+                <p>Session organisers are responsible for their own session and are supported by the symposium
+                organisers, who provide the room and setting, coffee breaks, lunch and a social event, alongside a
+                broader programme of keynotes. Participants pay a registration fee covering food and beverages
+                during the symposium.</p>
+                <p>Accepted sessions can start planning as soon as they are accepted. Each session sets up its own
+                landing page, with its own tools and design, which is linked from this site — tell us if you need
+                support.</p>
+              </div>
+              <aside aria-label="Call for Sessions at a glance" class="call-aside reveal in">
+                <dl>
+                  <div><dt>Format</dt><dd>One or two 75-minute slots<small>Need more? Get in touch.</small></dd></div>
+                  <div><dt>When</dt><dd><time datetime="2027-05-11">Tue 11</time> or <time datetime="2027-05-12">Wed 12 May 2027</time></dd></div>
+                  <div><dt>Proposal deadline</dt><dd><time datetime="2026-11-25">25 November 2026</time><small><abbr title="Anywhere on Earth">AoE</abbr></small></dd></div>
+                  <div><dt>Notification</dt><dd>On a rolling basis<small>by <time datetime="2026-12-02">2 December 2026</time> at the latest</small></dd></div>
+                </dl>
+                <a class="call-cta" href="mailto:fuso@unisg.ch?subject=SoSy%2027%20session%20proposal">Email your proposal</a>
+                <p class="call-cta-note">Send it to <a href="mailto:fuso@unisg.ch?subject=SoSy%2027%20session%20proposal">fuso@unisg.ch</a></p>
+              </aside>
+            </div>
+            <div class="call-topics reveal in">
+              <h3>Topic suggestions</h3>
+              <ul class="topics">
+                <li>Solid architecture</li>
+                <li>Solid and its users — human-centric design, adoption, …</li>
+                <li>Agents on and about Solid</li>
+                <li>Legal aspects — data protection, governance, …</li>
+                <li>Authoring tools for Solid</li>
+                <li>Open-source Solid projects</li>
+                <li>Applications — industry, research, public entities, …</li>
+                <li>Business cases for Solid</li>
+                <li>Medical personal data in Solid</li>
+                <li>Self-publishing via Solid</li>
+                <li>Data spaces and Solid</li>
+                <li>Digital wallets and Solid</li>
+                <li>Security and privacy</li>
+                <li>Evolving Web standards behind Solid</li>
+                <li class="open">Any other Solid topic — bring it in!</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="dates sosy-grey" id="dates" inlist="" rel="schema:hasPart" resource="#dates">
           <div class="container">
             <div class="section-head reveal in">
               <h2>Key <span class="hl">dates</span></h2>
             </div>
             <ul class="facts reveal in">
-              <li><span class="k">Oct 2026</span><span class="v-val">Call for workshop proposals <span class="tag now">Opening soon</span></span></li>
+              <li><span class="k">Now</span><span class="v-val"><a href="#call-for-sessions">Call for Sessions</a> <span class="tag now">Open</span></span></li>
+              <li><span class="k">25 Nov 2026</span><span class="v-val">Session proposal deadline (AoE)</span></li>
+              <li><span class="k">2 Dec 2026</span><span class="v-val">Session notifications, at the latest</span></li>
               <li><span class="k">Autumn 2026</span><span class="v-val">Call for contributions — papers, posters and demos</span></li>
               <li><span class="k">Feb 2027</span><span class="v-val">Submission deadline</span></li>
               <li><span class="k">Mar 2027</span><span class="v-val">Notifications to authors</span></li>
               <li><span class="k">Mar 2027</span><span class="v-val">Registration opens</span></li>
               <li><span class="k">10–12 May 2027</span><span class="v-val">Solid Symposium 2027</span></li>
             </ul>
-            <p class="dates-note reveal in">Dates beyond the first call are indicative and will be fixed when each
-            call is published. Planning a workshop or an affiliated event? We would like to hear about it before
-            the call goes out — write to <a href="mailto:fuso@unisg.ch?subject=SoSy%2027%20workshop%20proposal">fuso@unisg.ch</a>,
-            or subscribe below to be told the moment the call opens.</p>
+            <p class="dates-note reveal in">The Call for Sessions dates are fixed. The remaining dates are
+            indicative and will be fixed when each call is published — <a href="#signup">subscribe to the
+            newsletter</a> to be told the moment the call for contributions opens.</p>
           </div>
         </section>
-        <section class="sponsors sosy-grey" id="sponsors" inlist="" rel="schema:hasPart" resource="#sponsors">
+        <section class="sponsors" id="sponsors" inlist="" rel="schema:hasPart" resource="#sponsors">
           <div class="container">
             <div class="section-head reveal in">
               <h2>Our <span class="hl">sponsors</span></h2>
@@ -1278,7 +1435,7 @@
             <a class="sponsor-card reveal in" href="https://www.muze.nl/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/muze-logo-white.png" /><img alt="Muze logo" class="sponsor-logo" height="66" src="assets/muze-logo.png" width="260" /></picture> <span><span class="sponsor-name">Muze</span><span class="sponsor-role">Creative web builders from the Netherlands</span><span class="sponsor-link">muze.nl →</span></span></a>
           </div>
         </section>
-        <section class="faq" id="faq" inlist="" rel="schema:hasPart" resource="#faq">
+        <section class="faq sosy-grey" id="faq" inlist="" rel="schema:hasPart" resource="#faq">
           <div class="container">
             <div class="section-head reveal in">
               <h2>Frequently asked questions</h2>
@@ -1288,7 +1445,7 @@
                 <h3>What is the Solid Symposium 2027?</h3>
                 <p>The Solid Symposium 2027 (SoSy 27) is the fifth edition of the annual Solid community
                 conference. It runs from 10 to 12 May 2027 at the University of St.Gallen in Switzerland and
-                combines peer-reviewed papers, workshops and tutorials, posters and demos, a student hackathon
+                combines peer-reviewed papers, community sessions, posters and demos, a student hackathon
                 and a public open day on digital sovereignty.</p>
               </div>
               <div class="qa-item">
@@ -1327,10 +1484,12 @@
                 to be told when the call is published — the exact dates are fixed when the call goes out.</p>
               </div>
               <div class="qa-item">
-                <h3>How do I propose a workshop or an affiliated event?</h3>
-                <p>The call for workshop proposals opens in October 2026. If you are planning a workshop or an
-                affiliated event, the organisers would like to hear about it before the call goes out — write to
-                <a href="mailto:fuso@unisg.ch?subject=SoSy%2027%20workshop%20proposal">fuso@unisg.ch</a>.</p>
+                <h3>How do I propose a session or workshop?</h3>
+                <p>The <a href="#call-for-sessions">Call for Sessions</a> is open until 25 November 2026 (AoE).
+                Sessions fill one or two 75-minute slots on 11 or 12 May 2027 and can take any form — paper
+                sessions, talks, panels, tutorials or hands-on workshops. Email a proposal of up to three pages to
+                <a href="mailto:fuso@unisg.ch?subject=SoSy%2027%20session%20proposal">fuso@unisg.ch</a>; notifications are sent on a rolling basis, by 2 December 2026
+                at the latest.</p>
               </div>
               <div class="qa-item">
                 <h3>When does registration open?</h3>
@@ -1396,14 +1555,14 @@
       <div class="container foot">
         <div class="foot-brand"><span class="brand-mark"><img alt="" src="assets/solid-logo.svg" /></span> SoSy 27 </div>
         <div class="links">
-          <div class="past-editions"><a class="past-trigger" href="#">Past editions <span aria-hidden="true">▾</span></a>
-            <div class="past-menu" role="menu"><a href="https://sosy2026.eu/" rel="noopener" target="_blank">SoSy 26</a> <a href="https://sosy2025.eu/" rel="noopener" target="_blank">SoSy 25</a> <a href="https://events.vito.be/sosy2024" rel="noopener" target="_blank">SoSy 24</a> <a href="https://solid.ti.rw.fau.de/public/2023/solid-symposium/" rel="noopener" target="_blank">SoSy 23</a></div>
+          <div class="past-editions"><button aria-haspopup="true" class="past-trigger" type="button">Past editions <span aria-hidden="true">▾</span></button>
+            <div class="past-menu"><a href="https://sosy2026.eu/" rel="noopener" target="_blank">SoSy 26</a> <a href="https://sosy2025.eu/" rel="noopener" target="_blank">SoSy 25</a> <a href="https://events.vito.be/sosy2024" rel="noopener" target="_blank">SoSy 24</a> <a href="https://solid.ti.rw.fau.de/public/2023/solid-symposium/" rel="noopener" target="_blank">SoSy 23</a></div>
           </div><a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">Become a sponsor</a> <a href="mailto:fuso@unisg.ch">Contact</a> <a href="https://www.linkedin.com/company/solid-symposium/" rel="noopener" target="_blank">LinkedIn</a>
         </div>
       </div>
       <div class="container">
         <p class="foot-sponsors">Sponsored by <a href="https://www.muze.nl/" rel="noopener" target="_blank">Muze</a></p>
-        <p class="foot-updated">Page updated <time datetime="2026-10-08" property="schema:dateModified">8 October 2026</time></p>
+        <p class="foot-updated">Page updated <time datetime="2026-10-11" property="schema:dateModified">11 October 2026</time></p>
         <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
     </footer>
