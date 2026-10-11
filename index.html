@@ -168,7 +168,7 @@
     .nav-cta {
       position: fixed;
       top: 16px;
-      right: 80px;
+      right: 16px;
       z-index: 51;
       background: var(--sosy-purple);
       color: #fff
@@ -180,10 +180,12 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 680px;
+      /* never taller than the window below the 72px nav, so the panel shows without scrolling */
+      min-height: min(680px, calc(100vh - 72px));
+      min-height: min(680px, calc(100svh - 72px));
       display: flex;
       align-items: flex-end;
-      padding: calc(14 * var(--sosy-u)) 0 calc(5 * var(--sosy-u))
+      padding: calc(8 * var(--sosy-u)) 0 calc(10 * var(--sosy-u))
     }
 
     .hero-bg { position: absolute; inset: 0 }
@@ -702,7 +704,6 @@
     }
 
     @media (max-width: 560px) {
-      .nav-cta { right: 20px }
       .hero { min-height: auto; padding: calc(24 * var(--sosy-u)) 0 calc(2.5 * var(--sosy-u)) }
       .hero .container { padding: 0 calc(1.5 * var(--sosy-u)) }
       .hero-panel { padding: calc(2.5 * var(--sosy-u)) }
