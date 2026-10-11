@@ -265,6 +265,8 @@
 
     .sosy .hero h1 { margin: 0; font-size: var(--sosy-s-h2); letter-spacing: -.04em; line-height: 1.02 }
 
+    .sosy .hero-lede { font-size: var(--sosy-s-text); max-width: 46ch }
+
     .hero h1 .small {
       display: block;
       margin-top: calc(1.5 * var(--sosy-u));
@@ -709,6 +711,8 @@
       .hero .container { padding: 0 calc(1.5 * var(--sosy-u)) }
       .hero-panel { padding: calc(2.5 * var(--sosy-u)) }
       .hero-openday { flex-direction: column; gap: 2px }
+      .hero h1 .sep { display: none }
+      .hero h1 .when { display: block }
       .orga-logo, .orga-logo img { height: 48px }
       .orga-logo { line-height: 48px }
       .orga-logo.wordmark img { height: auto; width: 128px }
@@ -1258,9 +1262,10 @@
           <button aria-label="Pause background animation" aria-pressed="false" class="hero-pause" onclick="this.setAttribute('aria-pressed', this.closest('.hero').classList.toggle('paused'))" type="button"></button>
           <div class="container">
             <div class="hero-panel sosy-plain">
-              <h1 property="schema:name">The 5th <span class="hl">Solid Symposium</span> <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, <time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></h1>
-              <a class="hero-openday" href="#programme"><span class="k">Mon 10 May</span> <span>Solid Open Day on Digital Sovereignty — open to the public</span></a>
-              <a class="hero-openday" href="#call-for-sessions"><span class="k">Until 25 Nov</span> <span>Call for Sessions — propose a workshop, tutorial or panel</span></a>
+              <h1 property="schema:name">The 5th <span class="hl">Solid Symposium</span> <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, Switzerland<span aria-hidden="true" class="sep"> · </span> <span class="when"><time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></span></h1>
+              <p class="hero-lede">The annual conference on <strong>Solid</strong>, the open Web specification that keeps your data in a Pod you control — and lets you decide which apps may use it.</p>
+              <a class="hero-openday" href="#programme"><span class="k">Solid Open Day</span> <span>Digital sovereignty, open to the public — <time datetime="2027-05-10">Mon 10 May 2027</time></span></a>
+              <a class="hero-openday" href="#call-for-sessions"><span class="k">Call for Sessions</span> <span>Propose a workshop, tutorial or panel — deadline <time datetime="2026-11-25">25 Nov 2026</time></span></a>
               <div class="hero-sponsors"><span>Sponsored by</span> <a href="https://www.muze.nl/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/muze-logo-white.png" /><img alt="Muze" height="66" src="assets/muze-logo.png" width="260" /></picture></a></div>
             </div>
           </div>
