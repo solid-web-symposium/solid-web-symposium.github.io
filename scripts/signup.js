@@ -2,8 +2,9 @@
  * Sosy 27 newsletter signup — two paths, no third-party auth deps.
  *
  *   Path "have": user already has a Solid Pod.
- *     → Show static instructions + an example LDN payload + curl command
- *       targeting the organizer inbox. They subscribe themselves.
+ *     → Form for WebID + email → POST a SubscribeAction notification to the
+ *       organizer inbox from the browser. The payload and a curl command stay
+ *       available for people who prefer to send it themselves.
  *
  *   Path "none": user has no Pod.
  *     → Proof-of-work CAPTCHA (no backend) → create CSS account here →
@@ -193,63 +194,101 @@
     return btn;
   }
 
-  function ghostButton(label, onClick) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'ghost';
-    btn.textContent = label;
-    btn.addEventListener('click', onClick);
-    return btn;
-  }
+  const shellQuote = (s) => `'${s.replace(/'/g, `'\\''`)}'`;
 
   function renderHavePane(root) {
     const pane = document.createElement('div');
     pane.className = 'signup-pane';
     pane.innerHTML = `
       <h3>Subscribe from your existing Solid Pod</h3>
-      <p>Send a Linked Data Notification to the symposium inbox using your own
-        WebID and email. We'll send the newsletter to you by email — the
-        notification just lets us record that you've subscribed.</p>
-      <label style="display:block;margin:12px 0 6px;font-size:13px">Your WebID</label>
-      <input type="url" data-webid placeholder="https://your.pod.example/profile/card#me"
-             style="width:100%;padding:10px 12px;border-radius:8px;border:0;font-size:14px;font-family:'Ubuntu Mono',ui-monospace,monospace" />
-      <label style="display:block;margin:12px 0 6px;font-size:13px">Your email address</label>
-      <input type="email" data-email required placeholder="you@institution.edu"
-             style="width:100%;padding:10px 12px;border-radius:8px;border:0;font-size:14px" />
-      <p style="margin-top:14px"><strong>Inbox:</strong> <code>${ORGANIZER_INBOX}</code></p>
-      <p style="margin-top:8px"><strong>Notification body to POST as <code>application/ld+json</code>:</strong></p>
-      <pre data-payload></pre>
-      <p><strong>Example using curl:</strong></p>
-      <pre data-curl></pre>
-      <p style="margin-top:12px;font-size:12px;opacity:.75">We don't verify the
-        <code>actor</code> field — please use your real WebID. Your Pod's auth
-        is not required for this POST: the inbox accepts anonymous appends.</p>
-      <div class="pane-actions"></div>
+      <p>Enter your WebID and email. We send a notification to the symposium
+        inbox to record your subscription, and the newsletter itself reaches
+        you by email.</p>
+      <form data-have novalidate>
+        <label style="display:block;margin:12px 0 6px;font-size:13px">Your WebID</label>
+        <input type="url" name="webid" required placeholder="https://your.pod.example/profile/card#me"
+               style="width:100%;padding:10px 12px;border-radius:8px;border:0;font-size:14px;font-family:'Ubuntu Mono',ui-monospace,monospace" />
+        <label style="display:block;margin:12px 0 6px;font-size:13px">Your email address</label>
+        <input type="email" name="email" required placeholder="you@institution.edu"
+               style="width:100%;padding:10px 12px;border-radius:8px;border:0;font-size:14px" />
+        <p style="margin-top:12px;font-size:12px;opacity:.75">We don't verify the
+          WebID, so please use your real one. You don't need to log in: the
+          inbox accepts notifications from anyone.</p>
+        <div class="pane-actions">
+          <button type="submit">Subscribe</button>
+          <button type="button" class="ghost" data-back>Back</button>
+        </div>
+      </form>
+      <details style="margin-top:14px">
+        <summary style="cursor:pointer">Prefer to send the notification yourself?</summary>
+        <p style="margin-top:10px"><strong>Inbox:</strong> <code>${ORGANIZER_INBOX}</code></p>
+        <p style="margin-top:8px"><strong>Notification body to POST as <code>application/ld+json</code>:</strong></p>
+        <pre data-payload></pre>
+        <p><strong>Example using curl:</strong></p>
+        <pre data-curl></pre>
+        <div class="pane-actions" data-copy></div>
+      </details>
     `;
+    const form = pane.querySelector('[data-have]');
     const payloadEl = pane.querySelector('[data-payload]');
     const curlEl = pane.querySelector('[data-curl]');
-    const webidInput = pane.querySelector('[data-webid]');
-    const emailInput = pane.querySelector('[data-email]');
+    const webidInput = form.elements.webid;
+    const emailInput = form.elements.email;
 
     function refresh() {
       const webId = webidInput.value.trim() || 'https://your.pod.example/profile/card#me';
-      const email = emailInput.value.trim();
-      const body = JSON.stringify(notificationBody(webId, email || null), null, 2);
-      payloadEl.textContent = body;
-      curlEl.textContent = `curl -X POST '${ORGANIZER_INBOX}' \\
+      const email = emailInput.value.trim() || null;
+      payloadEl.textContent = JSON.stringify(notificationBody(webId, email), null, 2);
+      curlEl.textContent = `curl -X POST ${shellQuote(ORGANIZER_INBOX)} \\
   -H 'Content-Type: application/ld+json' \\
-  --data-binary @subscribe.jsonld`;
+  --data-binary ${shellQuote(JSON.stringify(notificationBody(webId, email)))}`;
     }
     webidInput.addEventListener('input', refresh);
     emailInput.addEventListener('input', refresh);
     refresh();
 
-    const actions = pane.querySelector('.pane-actions');
-    actions.append(
+    pane.querySelector('[data-copy]').append(
       dynamicCopyButton('Copy notification', () => payloadEl.textContent),
       dynamicCopyButton('Copy curl command', () => curlEl.textContent),
-      ghostButton('Back', () => { pane.remove(); showChooser(root); }),
     );
+
+    pane.querySelector('[data-back]').addEventListener('click', () => {
+      pane.remove(); showChooser(root);
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const webId = webidInput.value.trim();
+      const email = emailInput.value.trim();
+      if (!/^https?:\/\/\S+$/.test(webId)) {
+        paneError(pane, 'Please enter your WebID, starting with https://.');
+        webidInput.focus();
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        paneError(pane, 'Please enter a valid email address.');
+        emailInput.focus();
+        return;
+      }
+      const submit = form.querySelector('button[type="submit"]');
+      submit.disabled = webidInput.disabled = emailInput.disabled = true;
+      try {
+        paneStatus(pane, 'Notifying symposium inbox…');
+        await postNotification(webId, email);
+        pane.innerHTML = `
+          <h3>You're subscribed</h3>
+          <p>We've recorded <code data-webid></code> on the symposium inbox and
+            will email Solid Symposium 2027 updates to <code data-email></code>.</p>
+        `;
+        pane.querySelector('[data-webid]').textContent = webId;
+        pane.querySelector('[data-email]').textContent = email;
+      } catch (err) {
+        console.error(err);
+        paneError(pane, 'Subscribing failed: ' + err.message);
+        submit.disabled = webidInput.disabled = emailInput.disabled = false;
+      }
+    });
+
     root.querySelector('.signup-choice-buttons').style.display = 'none';
     root.appendChild(pane);
   }
