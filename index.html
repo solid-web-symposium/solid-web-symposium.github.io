@@ -642,6 +642,11 @@
 
     .sponsor-logo { width: 260px; max-width: 100%; height: auto }
 
+    .sponsor-card + .sponsor-card { margin-top: calc(1.6 * var(--sosy-u)) }
+
+    /* dark-on-transparent sponsor logos get the same white plate as the organiser logos */
+    [data-mode="dark"] .sponsor-logo.plate { background: #fff; padding: 12px; border-radius: var(--sosy-radius) }
+
     .sponsor-link { display: inline-block; margin-top: calc(1.2 * var(--sosy-u)); font-size: var(--sosy-s-small); font-weight: 700; color: var(--sosy-hl) }
 
     /* faq */
@@ -1578,6 +1583,7 @@
               <p>We are grateful to the organisations that make SoSy 27 possible.<br />Are you interested in joining them? Write to <a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">fuso@unisg.ch</a>.</p>
             </div>
             <a class="sponsor-card reveal in" href="https://www.muze.nl/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/muze-logo-white.png" /><img alt="Muze logo" class="sponsor-logo" height="66" src="assets/muze-logo.png" width="260" /></picture> <span><span class="sponsor-name">Muze</span><span class="sponsor-role">Creative web builders from the Netherlands</span><span class="sponsor-link">muze.nl →</span></span></a>
+            <a class="sponsor-card reveal in" href="https://www.stadt.sg.ch/" rel="noopener" target="_blank"><img alt="City of St.Gallen logo" class="sponsor-logo plate" height="57" src="assets/stadt-stgallen-logo.png" width="260" /> <span><span class="sponsor-name">City of St.Gallen</span><span class="sponsor-role">The host city of SoSy 27</span><span class="sponsor-link">stadt.sg.ch →</span></span></a>
           </div>
         </section>
         <section class="faq sosy-grey" id="faq" inlist="" rel="schema:hasPart" resource="#faq">
