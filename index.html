@@ -632,6 +632,43 @@
       color: var(--sosy-panel-quiet)
     }
 
+    /* organising committee: Person from design/components (initials disc, role tag, name, affiliation) */
+    .sosy .orga-label { display: block; margin-top: calc(6 * var(--sosy-u)) }
+    .committee-group + .committee-group { margin-top: calc(3 * var(--sosy-u)) }
+    .sosy .committee-group h3 { padding-bottom: calc(1.2 * var(--sosy-u)); border-bottom: 2px solid var(--sosy-line) }
+
+    .people {
+      list-style: none;
+      margin: calc(2 * var(--sosy-u)) 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: calc(2.4 * var(--sosy-u)) calc(1.6 * var(--sosy-u))
+    }
+
+    .person { display: flex; align-items: center; gap: calc(1.2 * var(--sosy-u)) }
+
+    .person-face {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: calc(5 * var(--sosy-u));
+      height: calc(5 * var(--sosy-u));
+      border-radius: 50%;
+      background: var(--sosy-disc);
+      color: var(--sosy-icon);
+      font-size: calc(1.6 * var(--sosy-u));
+      font-weight: 700;
+      overflow: hidden
+    }
+
+    /* pod-hosted portraits, as on futuresociety.ch */
+    .person-face img { width: 100%; height: 100%; object-fit: cover }
+
+    .person-who { display: grid; gap: calc(.35 * var(--sosy-u)); min-width: 0 }
+    .person-name { font-size: var(--sosy-s-body); font-weight: 700; line-height: 1.15; letter-spacing: -.015em; color: var(--sosy-fg) }
+    .person-role { font-size: var(--sosy-s-small); line-height: 1.35; color: var(--sosy-quiet) }
+
     .sponsor-card {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -819,6 +856,7 @@
       .container { padding: 0 calc(2.5 * var(--sosy-u)) }
       section { padding: calc(8 * var(--sosy-u)) 0 }
       .orga-grid, .days, .qa, .about-grid, .call-grid { grid-template-columns: 1fr }
+      .people { grid-template-columns: repeat(2, minmax(0, 1fr)) }
       .call-grid { gap: calc(4 * var(--sosy-u)) }
       .call-aside { position: static }
       .about-grid { gap: calc(4 * var(--sosy-u)) }
@@ -839,6 +877,7 @@
       .sponsor-card { grid-template-columns: 1fr; gap: calc(2.5 * var(--sosy-u)); padding: calc(2.5 * var(--sosy-u)) }
       .sponsor-logo { width: 200px }
       .facts li { grid-template-columns: 1fr; gap: 4px }
+      .people { grid-template-columns: 1fr }
       .foot { flex-direction: column; align-items: flex-start }
       .foot .links { flex-wrap: wrap; gap: 16px 22px }
       .past-menu { left: 0; transform: none }
@@ -1369,13 +1408,10 @@
     <nav class="nav">
       <div class="container nav-inner"><a class="brand" href="#top"><span class="brand-mark"><img alt="Solid logo" src="assets/solid-logo.svg" /></span>SoSy 27</a> <button aria-controls="nav-menu" aria-expanded="false" aria-label="Menu" class="nav-toggle" type="button"><svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" /></svg></button>
         <div class="nav-menu" id="nav-menu">
-          <details name="nav"><summary>About</summary>
-            <div class="nav-sub"><a href="#about">The symposium</a> <a href="#organisers">Organisers</a></div>
-          </details>
           <details name="nav"><summary>Call for Participation</summary>
             <div class="nav-sub"><a href="#call-for-sessions">Call for Sessions</a> <a href="#dates">Key dates</a></div>
           </details>
-          <a href="#programme">Programme</a> <a href="#sponsors">Sponsors</a> <a href="#faq">FAQ</a>
+          <a href="#programme">Programme</a> <a href="#sponsors">Sponsors</a> <a href="#faq">FAQ</a> <a href="#organisers">Organisers</a>
         </div>
         <a class="nav-cta" href="#signup">Stay updated</a></div>
     </nav>
@@ -1696,7 +1732,46 @@
           </div>
         </section>
         <section class="organisers sosy-grey" id="organisers" inlist="" rel="schema:hasPart" resource="#organisers">
-          <div class="container"><span class="eyebrow">Organised by</span>
+          <div class="container">
+            <div class="section-head reveal in" id="committee">
+              <h2>Organising <span class="hl">committee</span></h2>
+            </div>
+            <div class="committee reveal in">
+              <div class="committee-group">
+                <h3>Sessions</h3>
+                <ul class="people">
+                  <li class="person"><span aria-hidden="true" class="person-face">KG</span><span class="person-who"><span class="person-name">Kimberly Garcia</span><span class="person-role">IT:U Interdisciplinary Transformation University Austria</span></span></li>
+                </ul>
+              </div>
+              <div class="committee-group">
+                <h3>Academic programme</h3>
+                <ul class="people">
+                  <li class="person"><span aria-hidden="true" class="person-face">JW</span><span class="person-who"><span class="person-name">Jesse Wright</span><span class="person-role">Open Data Institute</span></span></li>
+                  <li class="person"><span aria-hidden="true" class="person-face">CB</span><span class="person-who"><span class="person-name">Christoph Braun</span><span class="person-role">Karlsruhe Institute of Technology</span></span></li>
+                </ul>
+              </div>
+              <div class="committee-group">
+                <h3>Posters and demos</h3>
+                <ul class="people">
+                  <li class="person"><span class="person-face"><img alt="" loading="lazy" src="https://dblankvoort.datapod.igrant.io/public/dickblankvoort.jpg" /></span><span class="person-who"><span class="person-name">Dick Blankvoort</span><span class="person-role">University of St.Gallen</span></span></li>
+                  <li class="person"><span aria-hidden="true" class="person-face">LS</span><span class="person-who"><span class="person-name">LK Seiling</span><span class="person-role">Weizenbaum Institute</span></span></li>
+                </ul>
+              </div>
+              <div class="committee-group">
+                <h3>Publicity and infrastructure</h3>
+                <ul class="people">
+                  <li class="person"><span aria-hidden="true" class="person-face">JG</span><span class="person-who"><span class="person-name">Jan Grau</span><span class="person-role">Empa and University of St.Gallen</span></span></li>
+                  <li class="person"><span class="person-face"><img alt="" loading="lazy" src="https://academia.jrstrecker.de/images/profile.jpg" /></span><span class="person-who"><span class="person-name">Jannis Strecker-Bischoff</span><span class="person-role">University of St.Gallen</span></span></li>
+                </ul>
+              </div>
+              <div class="committee-group">
+                <h3>Local arrangements</h3>
+                <ul class="people">
+                  <li class="person"><span class="person-face"><img alt="" loading="lazy" src="https://bridgingworlds.solidcommunity.net/public/fuso-photo.jpg" /></span><span class="person-who"><span class="person-name">Luka Bekavac</span><span class="person-role">University of St.Gallen</span></span></li>
+                </ul>
+              </div>
+            </div>
+            <span class="eyebrow orga-label" id="organised-by">Organised by</span>
             <div class="orga-grid reveal in"><a class="orga" href="https://futuresociety.ch/" rel="noopener" target="_blank"><span class="orga-logo"><img alt="Future Society Hub (FuSo) logo" height="595" src="assets/fuso-logo.svg" width="595" /></span> <span><span class="orga-name">Future Society Hub (FuSo)</span><span class="orga-role">Cross-disciplinary research hub fusing computer science and law, University of St.Gallen</span></span></a> <a class="orga" href="https://ics.unisg.ch/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute of Computer Science (ICS-HSG)</span><span class="orga-role">Research institute for computer science at the University of St.Gallen</span></span></a> <a class="orga" href="https://ile.unisg.ch/en/" rel="noopener" target="_blank"><span class="orga-logo wordmark"><img alt="University of St.Gallen logo" height="250" src="assets/hsg-logo.png" width="1200" /></span> <span><span class="orga-name">Institute for Law and Economics (ILE-HSG)</span><span class="orga-role">Research institute for law and economics at the University of St.Gallen</span></span></a></div>
           </div>
         </section>
