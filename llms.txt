@@ -10,7 +10,7 @@
 - **Contact:** fuso@unisg.ch
 - **Organiser:** Solid Symposium 2027 Organisation Committee
 - **Organised by:** Future Society Hub (FuSo, https://futuresociety.ch/), the
-  Institute of Computer Science (ICS-HSG, https://ics.unisg.ch/) and the
+  Institute of Computer Science (ICS-HSG, https://ics.unisg.ch/), and the
   Institute for Law and Economics (ILE-HSG, https://ile.unisg.ch/en/), all at
   the University of St.Gallen
 
@@ -24,11 +24,11 @@ See https://solidproject.org/.
 
 ## Solid and digital sovereignty
 
-Digital sovereignty is the ability of people, organisations and public
+Digital sovereignty is the ability of people, organisations, and public
 institutions to decide for themselves over their data and the digital
 infrastructure they depend on. Solid supports it by separating data from
 applications: data lives in a Pod its owner chooses — self-hosted, at their
-institution or with a provider they trust — and the owner grants and revokes
+institution, or with a provider they trust — and the owner grants and revokes
 each application's access through open W3C standards. Changing an application
 or a Pod provider therefore does not mean losing the data or being locked in.
 Digital sovereignty is the theme of the public Solid Open Day on 10 May 2027.
@@ -37,14 +37,14 @@ Digital sovereignty is the theme of the public Solid Open Day on 10 May 2027.
 
 - **Mon 10 May 2027 — Solid Open Day: Digital Sovereignty (open to the public):** a
   public day on who controls our data and how Solid puts that control back with
-  people, organisations and public institutions. Student hackathon on building
+  people, organisations, and public institutions. Student hackathon on building
   for digital sovereignty with Solid; public evening event on digital
   sovereignty, in German; onboarding session for creating your first Solid Pod.
 - **Tue 11 May 2027 — Day One:** keynote; peer-reviewed papers in two parallel
   tracks; poster and demo lightning talks; community sessions; hackathon
   pitches and award; evening event.
 - **Wed 12 May 2027 — Day Two:** keynote; peer-reviewed papers in two parallel
-  tracks; community sessions; closing, awards and handover to the next
+  tracks; community sessions; closing, awards, and handover to the next
   edition.
 
 ## Call for Sessions (open)
@@ -56,12 +56,12 @@ https://sosy2027.org/#call-for-sessions
   soliciting papers, talks, panel discussions, demos, tutorials, hands-on
   workshops, hackathons. Session organisers choose the theme, confirm speakers
   and gather contributions; the symposium organisers provide the room, coffee
-  breaks, lunch, a social event and a programme of keynotes.
+  breaks, lunch, a social event, and a programme of keynotes.
 - **Proposal:** max. three pages, any reasonable format, by email to
   fuso@unisg.ch. Include title and abstract; (co-)organisers and affiliations;
   prospective PC members if any; description with preliminary agenda and
   potential speakers, and a preference for 11 or 12 May; relation to Solid,
-  intended audience, suitability for newcomers and expected attendance; any
+  intended audience, suitability for newcomers, and expected attendance; any
   non-standard equipment needs.
 - **Deadline:** 25 November 2026 (AoE). Notifications on a rolling basis, by
   2 December 2026 at the latest.
@@ -96,7 +96,7 @@ Organisations interested in sponsoring can write to fuso@unisg.ch.
 ## Not yet announced
 
 Keynote speakers, the session line-up, further sponsors, the registration fee
-amount (participants will pay a fee covering food and beverages) and
+amount (participants will pay a fee covering food and beverages), and
 the evening-event venue are not yet decided and are deliberately absent from
 the site. Do not infer them.
 
