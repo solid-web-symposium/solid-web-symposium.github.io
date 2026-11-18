@@ -934,9 +934,14 @@
             "@type": "Event",
             "@id": "https://sosy2027.org/#event",
             "name": "Solid Symposium 2027",
-            "sponsor": {
-              "@id": "https://www.muze.nl/#organization"
-            },
+            "sponsor": [
+              {
+                "@id": "https://www.muze.nl/#organization"
+              },
+              {
+                "@id": "https://www.stadt.sg.ch/#organization"
+              }
+            ],
             "alternateName": [
               "SoSy 27",
               "The 5th Solid Symposium"
@@ -1301,6 +1306,15 @@
             "logo": "https://sosy2027.org/assets/muze-logo.png"
           },
           {
+            "@type": "GovernmentOrganization",
+            "@id": "https://www.stadt.sg.ch/#organization",
+            "name": "City of St.Gallen",
+            "alternateName": "Stadt St.Gallen",
+            "description": "The host city of SoSy 27.",
+            "url": "https://www.stadt.sg.ch/",
+            "logo": "https://sosy2027.org/assets/stadt-stgallen-logo.png"
+          },
+          {
             "@type": "FAQPage",
             "@id": "https://sosy2027.org/#faq",
             "url": "https://sosy2027.org/#faq",
@@ -1436,6 +1450,7 @@
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://ics.unisg.ch/#organization"><span about="https://ics.unisg.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Institute of Computer Science (ICS-HSG)</span> <span content="ICS-HSG" property="schema:alternateName"></span> <span rel="schema:url" resource="https://ics.unisg.ch/"></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:organizer" resource="https://ile.unisg.ch/#organization"><span about="https://ile.unisg.ch/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Institute for Law and Economics (ILE-HSG)</span> <span content="ILE-HSG" property="schema:alternateName"></span> <span rel="schema:url" resource="https://ile.unisg.ch/en/"></span></span></div>
         <div aria-hidden="true" class="rdfa-meta" rel="schema:sponsor" resource="https://www.muze.nl/#organization"><span about="https://www.muze.nl/#organization" typeof="schema:Organization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">Muze</span> <span rel="schema:url" resource="https://www.muze.nl/"></span></span></div>
+        <div aria-hidden="true" class="rdfa-meta" rel="schema:sponsor" resource="https://www.stadt.sg.ch/#organization"><span about="https://www.stadt.sg.ch/#organization" typeof="schema:GovernmentOrganization foaf:Organization"><span property="schema:name foaf:name" xml:lang="en">City of St.Gallen</span> <span rel="schema:url" resource="https://www.stadt.sg.ch/"></span></span></div>
         <header class="hero" id="top">
           <div class="hero-bg"><img alt="Aerial view of the SQUARE building on the HSG campus above the city of St. Gallen, with the Säntis massif on the horizon" decoding="async" fetchpriority="high" height="1080" src="assets/square-aerial.jpeg" width="1920" /> <img alt="The SQUARE building at HSG with a meadow of red poppies in front" decoding="async" fetchpriority="low" height="1278" src="assets/square-summer.jpeg" width="1920" /></div>
           <button aria-label="Pause background animation" aria-pressed="false" class="hero-pause" onclick="this.setAttribute('aria-pressed', this.closest('.hero').classList.toggle('paused'))" type="button"></button>
@@ -1445,7 +1460,7 @@
               <p class="hero-lede">After Nuremberg, Leuven, Leiden and London, the annual international conference on <strong>Solid</strong> is coming to St.Gallen, Switzerland. Solid is the open Web specification that keeps your data in a Pod you control — and lets you decide which apps may use it.</p>
               <a class="hero-openday" href="#programme"><span class="k">Solid Open Day</span> <span>Digital sovereignty, open to the public — <time datetime="2027-05-10">Mon 10 May 2027</time></span></a>
               <a class="hero-openday" href="#call-for-sessions"><span class="k">Call for Sessions</span> <span>Propose a workshop, tutorial or panel — deadline <time datetime="2026-11-25">25 Nov 2026</time></span></a>
-              <div class="hero-sponsors"><span>Sponsored by</span> <a href="https://www.muze.nl/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/muze-logo-white.png" /><img alt="Muze" height="66" src="assets/muze-logo.png" width="260" /></picture></a></div>
+              <div class="hero-sponsors"><span>Sponsored by</span> <a href="https://www.muze.nl/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/muze-logo-white.png" /><img alt="Muze" height="66" src="assets/muze-logo.png" width="260" /></picture></a> <a href="https://www.stadt.sg.ch/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/stadt-stgallen-logo-white.png" /><img alt="City of St.Gallen" height="57" src="assets/stadt-stgallen-logo.png" width="260" /></picture></a></div>
             </div>
           </div>
         </header>
@@ -1795,7 +1810,7 @@
         </div>
       </div>
       <div class="container">
-        <p class="foot-sponsors">Sponsored by <a href="https://www.muze.nl/" rel="noopener" target="_blank">Muze</a></p>
+        <p class="foot-sponsors">Sponsored by <a href="https://www.muze.nl/" rel="noopener" target="_blank">Muze</a> and the <a href="https://www.stadt.sg.ch/" rel="noopener" target="_blank">City of St.Gallen</a></p>
         <p class="foot-updated">Page updated <time datetime="2026-10-11" property="schema:dateModified">11 October 2026</time></p>
         <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
