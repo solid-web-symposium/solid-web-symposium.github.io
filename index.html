@@ -779,6 +779,19 @@
     .past-trigger { appearance: none; border: 0; padding: 0; background: none; font: inherit; font-weight: 700; color: var(--sosy-fg); cursor: pointer }
     .past-trigger:hover { color: var(--sosy-hl) }
 
+    /* dark-mode switch: track and sliding thumb, purple when dark mode is on; the state comes from aria-checked */
+    .theme-switch { display: inline-flex; align-items: center; padding: 0; background: none; border: 0; cursor: pointer }
+    .theme-switch-track { position: relative; width: 48px; height: 26px; border-radius: 13px; background: var(--sosy-divider); transition: background .2s }
+    .theme-switch-thumb { position: absolute; top: 3px; left: 3px; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, .3); transition: transform .2s }
+    .theme-switch svg { width: 13px; height: 13px; color: var(--sosy-purple) }
+    .theme-switch .icon-moon, .theme-switch[aria-checked="true"] .icon-sun { display: none }
+    .theme-switch[aria-checked="true"] .icon-moon { display: block }
+    .theme-switch[aria-checked="true"] .theme-switch-track { background: var(--sosy-purple) }
+    .theme-switch[aria-checked="true"] .theme-switch-thumb { transform: translateX(22px) }
+    .theme-switch:focus-visible { outline: none }
+    .theme-switch:focus-visible .theme-switch-track { outline: 2px solid var(--sosy-hl); outline-offset: 2px }
+    @media (prefers-reduced-motion: reduce) { .theme-switch-track, .theme-switch-thumb { transition: none } }
+
     /* invisible bridge so the cursor can travel from trigger to menu without losing hover */
     .past-editions::after { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 14px }
 
@@ -1808,6 +1821,7 @@
           <div class="past-editions"><button aria-haspopup="true" class="past-trigger" type="button">Past editions <span aria-hidden="true">▾</span></button>
             <div class="past-menu"><a href="https://sosy2026.eu/" rel="noopener" target="_blank">SoSy 26</a> <a href="https://sosy2025.eu/" rel="noopener" target="_blank">SoSy 25</a> <a href="https://events.vito.be/sosy2024" rel="noopener" target="_blank">SoSy 24</a> <a href="https://solid.ti.rw.fau.de/public/2023/solid-symposium/" rel="noopener" target="_blank">SoSy 23</a></div>
           </div><a href="mailto:fuso@unisg.ch?subject=Solid%20Symposium%202027%20Sponsorship">Become a sponsor</a> <a href="mailto:fuso@unisg.ch">Contact</a> <a href="https://www.linkedin.com/company/solid-symposium/" rel="noopener" target="_blank">LinkedIn</a>
+          <button aria-checked="false" aria-label="Dark mode" class="theme-switch" role="switch" type="button"><span aria-hidden="true" class="theme-switch-track"><span class="theme-switch-thumb"><svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" /><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" /></svg><svg class="icon-moon" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z" /></svg></span></span></button>
         </div>
       </div>
       <div class="container">
@@ -1816,5 +1830,25 @@
         <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
     </footer>
+    <script>
+      {
+        // dark-mode switch: follows the system setting until the visitor flips it; the choice is not saved
+        const root = document.documentElement
+        const toggle = document.querySelector('.theme-switch')
+        const system = matchMedia('(prefers-color-scheme: dark)')
+        // logos with a white version: make their <picture> sources follow the page mode instead of the system
+        const darkSources = document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')
+        let chosen = false
+        const apply = dark => {
+          if (dark) root.dataset.mode = 'dark'
+          else delete root.dataset.mode
+          toggle.setAttribute('aria-checked', dark)
+          darkSources.forEach(s => s.media = dark ? 'all' : 'not all')
+        }
+        apply(root.dataset.mode === 'dark')
+        toggle.addEventListener('click', () => { chosen = true; apply(root.dataset.mode !== 'dark') })
+        system.addEventListener('change', e => { if (!chosen) apply(e.matches) })
+      }
+    </script>
   </body>
 </html>
