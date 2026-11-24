@@ -441,7 +441,7 @@
         renderEmailSuccess(pane, email);
       } catch (err) {
         console.error(err);
-        paneError(pane, err.message || 'Network error. Please email fuso@unisg.ch instead.');
+        paneError(pane, err.message || 'Network error. Please email sosy@unisg.ch instead.');
         submit.disabled = false;
         input.disabled = false;
       }

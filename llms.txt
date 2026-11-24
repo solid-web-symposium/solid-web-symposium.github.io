@@ -7,7 +7,7 @@
 - **Dates:** Solid Open Day on digital sovereignty Mon 10 May 2027; symposium Tue 11 – Wed 12 May 2027
 - **Venue:** SQUARE, University of St.Gallen, Guisanstrasse 20, 9010 St.Gallen, Switzerland
 - **Language:** English (the public evening event on 10 May is in German)
-- **Contact:** fuso@unisg.ch
+- **Contact:** sosy@unisg.ch
 - **Organiser:** Solid Symposium 2027 Organisation Committee
 - **Organised by:** Future Society Hub (FuSo, https://futuresociety.ch/), the
   Institute of Computer Science (ICS-HSG, https://ics.unisg.ch/), and the
@@ -58,7 +58,7 @@ https://sosy2027.org/#call-for-sessions
   and gather contributions; the symposium organisers provide the room, coffee
   breaks, lunch, a social event, and a programme of keynotes.
 - **Proposal:** max. three pages, any reasonable format, by email to
-  fuso@unisg.ch. Include title and abstract; (co-)organisers and affiliations;
+  sosy@unisg.ch. Include title and abstract; (co-)organisers and affiliations;
   prospective PC members if any; description with preliminary agenda and
   potential speakers, and a preference for 11 or 12 May; relation to Solid,
   intended audience, suitability for newcomers, and expected attendance; any
@@ -91,7 +91,7 @@ are fixed as each call is published.
 
 - Muze (https://www.muze.nl/) — creative web builders from the Netherlands
 
-Organisations interested in sponsoring can write to fuso@unisg.ch.
+Organisations interested in sponsoring can write to sosy@unisg.ch.
 
 ## Not yet announced
 
