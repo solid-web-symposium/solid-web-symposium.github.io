@@ -506,6 +506,8 @@
 
     .call-aside dd small { display: block; font-size: var(--sosy-s-small); font-weight: 400; letter-spacing: 0; color: var(--sosy-panel-quiet) }
     .call-aside abbr { text-decoration: none }
+    /* deadline extension notice: same accent-rule panel as the hero teasers */
+    .call-extended { padding: var(--sosy-u) calc(1.4 * var(--sosy-u)); border-left: 4px solid var(--sosy-label); border-radius: var(--sosy-radius); background: var(--sosy-panel); color: var(--sosy-panel-fg) }
 
     .call-cta {
       display: block;
@@ -931,7 +933,7 @@
               "height": 1080
             },
             "inLanguage": "en",
-            "dateModified": "2026-10-11",
+            "dateModified": "2026-11-26",
             "speakable": {
               "@type": "SpeakableSpecification",
               "cssSelector": [
@@ -1388,7 +1390,7 @@
                 "name": "How do I propose a session or workshop?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The Call for Sessions is open until 25 November 2026 (AoE). Sessions fill one or two 75-minute slots on 11 or 12 May 2027 and can take any form — paper sessions, talks, panels, tutorials, or hands-on workshops. Email a proposal of up to three pages to sosy@unisg.ch; notifications are sent on a rolling basis, by 2 December 2026 at the latest."
+                  "text": "The Call for Sessions is open until 1 December 2026 (AoE) — the deadline has been extended from 25 November. Sessions fill one or two 75-minute slots on 11 or 12 May 2027 and can take any form — paper sessions, talks, panels, tutorials, or hands-on workshops. Email a proposal of up to three pages to sosy@unisg.ch; notifications are sent on a rolling basis, by 4 December 2026 at the latest."
                 }
               },
               {
@@ -1473,7 +1475,7 @@
               <h1 property="schema:name">The 5th <span class="hl">Solid Symposium</span> <span class="small" rel="schema:location" resource="#hsg-square">St.Gallen, Switzerland<span aria-hidden="true" class="sep"> · </span> <span class="when"><time datatype="xsd:date" datetime="2027-05-11" property="schema:startDate">11</time> &amp; <time datatype="xsd:date" datetime="2027-05-12" property="schema:endDate">12 May 2027</time></span></span></h1>
               <p class="hero-lede">After Nuremberg, Leuven, Leiden, and London, the annual international conference on <strong>Solid</strong> is coming to St.Gallen, Switzerland. Solid is the open Web specification that keeps your data in a Pod you control — and lets you decide which apps may use it.</p>
               <a class="hero-openday" href="#programme"><span class="k">Solid Open Day</span> <span>Digital sovereignty, open to the public — <time datetime="2027-05-10">Mon 10 May 2027</time></span></a>
-              <a class="hero-openday" href="#call-for-sessions"><span class="k">Call for Sessions</span> <span>Propose a workshop, tutorial, or panel — deadline <time datetime="2026-11-25">25 Nov 2026</time></span></a>
+              <a class="hero-openday" href="#call-for-sessions"><span class="k">Call for Sessions</span> <span>Propose a workshop, tutorial, or panel — deadline extended to <time datetime="2026-12-01">1 Dec 2026</time></span></a>
               <div class="hero-sponsors"><span>Sponsored by</span> <a href="https://www.muze.nl/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/muze-logo-white.png" /><img alt="Muze" height="66" src="assets/muze-logo.png" width="260" /></picture></a> <a href="https://www.stadt.sg.ch/" rel="noopener" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/stadt-stgallen-logo-white.png" /><img alt="City of St.Gallen" height="57" src="assets/stadt-stgallen-logo.png" width="260" /></picture></a></div>
             </div>
           </div>
@@ -1549,13 +1551,16 @@
         <section class="call" id="call-for-sessions" inlist="" rel="schema:hasPart" resource="#call-for-sessions">
           <div class="container">
             <div class="section-head reveal in">
-              <h2 property="schema:name">Call for <span class="hl">Sessions</span> <span class="tag now">Open until 25 Nov 2026</span></h2>
+              <h2 property="schema:name">Call for <span class="hl">Sessions</span> <span class="tag now">Extended to 1 Dec 2026</span></h2>
               <p class="lead" property="schema:description">Help shape the programme of SoSy 27. The core of the Solid
               Symposium has always been the Solid community proposing engaging, professional sessions — we invite
               you to propose one for 11 or 12 May 2027.</p>
             </div>
             <div class="call-grid">
               <div class="call-body reveal in">
+                <p class="call-extended"><strong>Deadline extended to <time datetime="2026-12-01">1 December 2026</time>.</strong>
+                We have received 13 session proposals so far — thank you! We have also received several queries
+                about extending the deadline, which is why we have done so.</p>
                 <p>SoSy 27 is a platform for the state of the art of Solid, its mission, and its technology: visions
                 for the future, the latest research insights, and updates on tools, success stories, and current
                 developments. It aims to offer something for everyone — Solid newcomers, researchers, open-source
@@ -1592,8 +1597,8 @@
                 <dl>
                   <div><dt>Format</dt><dd>One or two 75-minute slots<small>Need more? Get in touch.</small></dd></div>
                   <div><dt>When</dt><dd><time datetime="2027-05-11">Tue 11</time> or <time datetime="2027-05-12">Wed 12 May 2027</time></dd></div>
-                  <div><dt>Proposal deadline</dt><dd><time datetime="2026-11-25">25 November 2026</time><small><abbr title="Anywhere on Earth">AoE</abbr></small></dd></div>
-                  <div><dt>Notification</dt><dd>On a rolling basis<small>by <time datetime="2026-12-02">2 December 2026</time> at the latest</small></dd></div>
+                  <div><dt>Proposal deadline</dt><dd><time datetime="2026-12-01">1 December 2026</time><small><abbr title="Anywhere on Earth">AoE</abbr> · extended from <del><time datetime="2026-11-25">25 November</time></del></small></dd></div>
+                  <div><dt>Notification</dt><dd>On a rolling basis<small>by <time datetime="2026-12-04">4 December 2026</time> at the latest</small></dd></div>
                 </dl>
                 <a class="call-cta" href="mailto:sosy@unisg.ch?subject=SoSy%2027%20session%20proposal">Email your proposal</a>
                 <p class="call-cta-note">Send it to <a href="mailto:sosy@unisg.ch?subject=SoSy%2027%20session%20proposal">sosy@unisg.ch</a></p>
@@ -1628,8 +1633,8 @@
             </div>
             <ul class="facts reveal in">
               <li><span class="k">Now</span><span class="v-val"><a href="#call-for-sessions">Call for Sessions</a> <span class="tag now">Open</span></span></li>
-              <li><span class="k">25 Nov 2026</span><span class="v-val">Session proposal deadline (AoE)</span></li>
-              <li><span class="k">2 Dec 2026</span><span class="v-val">Session notifications, at the latest</span></li>
+              <li><span class="k">1 Dec 2026</span><span class="v-val">Session proposal deadline (AoE) <span class="tag now">Extended</span></span></li>
+              <li><span class="k">4 Dec 2026</span><span class="v-val">Session notifications, at the latest</span></li>
               <li><span class="k">Autumn 2026</span><span class="v-val">Call for contributions — papers, posters, and demos</span></li>
               <li><span class="k">Feb 2027</span><span class="v-val">Submission deadline</span></li>
               <li><span class="k">Mar 2027</span><span class="v-val">Notifications to authors</span></li>
@@ -1701,10 +1706,10 @@
               </div>
               <div class="qa-item">
                 <h3>How do I propose a session or workshop?</h3>
-                <p>The <a href="#call-for-sessions">Call for Sessions</a> is open until 25 November 2026 (AoE).
+                <p>The <a href="#call-for-sessions">Call for Sessions</a> is open until 1 December 2026 (AoE) — the deadline has been extended from 25 November.
                 Sessions fill one or two 75-minute slots on 11 or 12 May 2027 and can take any form — paper
                 sessions, talks, panels, tutorials, or hands-on workshops. Email a proposal of up to three pages to
-                <a href="mailto:sosy@unisg.ch?subject=SoSy%2027%20session%20proposal">sosy@unisg.ch</a>; notifications are sent on a rolling basis, by 2 December 2026
+                <a href="mailto:sosy@unisg.ch?subject=SoSy%2027%20session%20proposal">sosy@unisg.ch</a>; notifications are sent on a rolling basis, by 4 December 2026
                 at the latest.</p>
               </div>
               <div class="qa-item">
@@ -1826,7 +1831,7 @@
       </div>
       <div class="container">
         <p class="foot-sponsors">Sponsored by <a href="https://www.muze.nl/" rel="noopener" target="_blank">Muze</a> and the <a href="https://www.stadt.sg.ch/" rel="noopener" target="_blank">City of St.Gallen</a></p>
-        <p class="foot-updated">Page updated <time datetime="2026-10-11" property="schema:dateModified">11 October 2026</time></p>
+        <p class="foot-updated">Page updated <time datetime="2026-11-26" property="schema:dateModified">26 November 2026</time></p>
         <p class="foot-analytics">We measure visits with <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
       </div>
     </footer>

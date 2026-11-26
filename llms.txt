@@ -63,8 +63,9 @@ https://sosy2027.org/#call-for-sessions
   potential speakers, and a preference for 11 or 12 May; relation to Solid,
   intended audience, suitability for newcomers, and expected attendance; any
   non-standard equipment needs.
-- **Deadline:** 25 November 2026 (AoE). Notifications on a rolling basis, by
-  2 December 2026 at the latest.
+- **Deadline:** extended to 1 December 2026 (AoE), from 25 November 2026.
+  We received 13 proposals and several queries about an extension. Notifications on a rolling basis, by
+  4 December 2026 at the latest.
 - **Accepted sessions** set up their own landing page, linked from sosy2027.org.
 - **Topic suggestions:** Solid architecture; Solid and its users; agents on and
   about Solid; legal aspects (data protection, governance); authoring tools;
@@ -76,8 +77,8 @@ https://sosy2027.org/#call-for-sessions
 ## Key dates
 
 - **Open now** — Call for Sessions
-- **25 Nov 2026** — session proposal deadline (AoE)
-- **2 Dec 2026** — session notifications, at the latest
+- **1 Dec 2026** — session proposal deadline (AoE, extended from 25 Nov)
+- **4 Dec 2026** — session notifications, at the latest
 - **Autumn 2026** — call for contributions opens (papers, posters, demos)
 - **Feb 2027** — submission deadline
 - **Mar 2027** — notifications to authors
